@@ -31,13 +31,21 @@
         android:id="@+id/nav_service_cliente"
         android:name="com.example.gardenproyect.ui.service.ServiceFragment_Cliente"
         android:label="@string/menu_service_cliente"
-        tools:layout="@layout/fragment_service_cliente"/>
+        tools:layout="@layout/fragment_service_cliente">
+        <action
+            android:id="@+id/action_nav_service_cliente_to_nav_calendar_cliente"
+            app:destination="@id/nav_calendar_cliente" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_calendar_cliente"
         android:name="com.example.gardenproyect.ui.calendar.CalendarFragment_Cliente"
         android:label="@string/menu_calendar_cliente"
-        tools:layout="@layout/fragment_calendar_cliente"/>
+        tools:layout="@layout/fragment_calendar_cliente">
+        <action
+            android:id="@+id/action_nav_calendar_cliente_to_nav_time_cliente"
+            app:destination="@id/nav_time_cliente" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_time_cliente"

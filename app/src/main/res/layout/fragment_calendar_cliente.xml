@@ -25,6 +25,7 @@
             android:src="@drawable/calendario_cliente"/>
 
         <Button
+            android:id="@+id/btnTime"
             android:background="@color/colorPrimary"
             android:layout_width="300dp"
             android:layout_height="50dp"

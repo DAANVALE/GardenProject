@@ -13,12 +13,14 @@
         <item
             android:id="@+id/nav_service_cliente"
             android:title="@string/menu_service_cliente"/>
+        <!--
         <item
             android:id="@+id/nav_calendar_cliente"
             android:title="@string/menu_calendar_cliente" />
         <item
             android:id="@+id/nav_time_cliente"
             android:title="@string/menu_time_cliente"/>
+        -->
         <item
             android:id="@+id/nav_help"
             android:title="@string/menu_help" />
