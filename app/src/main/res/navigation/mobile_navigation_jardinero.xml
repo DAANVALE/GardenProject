@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation_jardinero"
+    app:startDestination="@+id/nav_home_jardinero">
+
+    <fragment
+        android:id="@+id/nav_home_jardinero"
+        android:name="com.example.gardenproyect.ui.home.HomeFragment_Jardinero"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home_jardinero"/>
+
+    <fragment
+        android:id="@+id/nav_dinero_jardinero"
+        android:name="com.example.gardenproyect.ui.dinero.DineroFragment_Jardinero"
+        android:label="@string/menu_dinero_jardinero"
+        tools:layout="@layout/fragment_dinero_jardinero" />
+
+    <fragment
+        android:id="@+id/nav_service_Jardinero"
+        android:name="com.example.gardenproyect.ui.service.ServiceFragment_Jardinero"
+        android:label="@string/menu_service_jardinero"
+        tools:layout="@layout/fragment_service_jardinero"
+        />
+
+    <fragment
+        android:id="@+id/nav_calendar_jardinero"
+        android:name="com.example.gardenproyect.ui.calendar.CalendarFragment_Jardinero"
+        android:label="@string/menu_calendar_jardinero"
+        tools:layout="@layout/fragment_calendar_jardinero"
+        />
+
+    <fragment
+        android:id="@+id/nav_time_jardinero"
+        android:name="com.example.gardenproyect.ui.time.TimeFragment_Jardinero"
+        android:label="@string/menu_time_jardinero"
+        tools:layout="@layout/fragment_time_jardinero"/>
+
+    <fragment
+        android:id="@+id/nav_help"
+        android:name="com.example.gardenproyect.ui.help.HelpFragment"
+        android:label="@string/menu_help"
+        tools:layout="@layout/fragment_help" />
+
+    <fragment
+        android:id="@+id/nav_comment_Jardinero"
+        android:name="com.example.gardenproyect.ui.comment.CommentFragment_Jardinero"
+        android:label="@string/menu_comment"
+        tools:layout="@layout/fragment_comment_jardinero"/>
+
+</navigation>

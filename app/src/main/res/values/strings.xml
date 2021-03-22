@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">GardenProyect</string>
+    <string name="title_activity_jardinero">Jardinero</string>
+    <string name="title_activity_cliente">Cliente</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title_jardinero">Daan Yael Valencia Alvarez</string>
+    <string name="nav_header_title_cliente">Edwin Giovanni Vega Torres</string>
+    <string name="nav_header_subtitle_jardinero">DaanValencia@gardenclean.mx</string>
+    <string name="nav_header_subtitle_cliente">EdwinVega@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Inicio</string>
+    <string name="menu_dinero_jardinero">Estado de cuenta</string>
+    <string name="menu_dinero_cliente">Gastos</string>
+    <string name="menu_help">Ayuda</string>
+    <string name="menu_comment">Comentarios</string>
+
+    <string name="menu_service_cliente">Servicio</string>
+    <string name="menu_service_jardinero">Servicios</string>
+    <string name="menu_calendar_jardinero">Calendario</string>
+    <string name="menu_calendar_cliente">Calendario</string>
+    <string name="menu_time_cliente">Horarios</string>
+    <string name="menu_time_jardinero">Horario</string>
+</resources>

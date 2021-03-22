@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.help.HelpFragment">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintBottom_toTopOf="parent"
+    app:layout_constraintTop_toBottomOf="parent"
+    app:layout_constraintRight_toLeftOf="parent"
+    app:layout_constraintLeft_toRightOf="parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#B5DFDA"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Equipo 41"
+        android:textColor="#000000"
+        android:textSize="30dp"/>
+
+    <TextView
+        android:layout_marginTop="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Integrantes:"
+        android:textColor="#000000"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:text="Macias Saavedra Gerardo Adrian\nVega Torres Edwin Giovanni\nValencia Alvarez Daan Yael"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Asesores:"
+        android:textColor="#000000"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:text="Coronado Rodríguez Rosa Aracelí\nMartínez Rangel Pedro Ulises"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="De:"
+        android:textColor="#000000"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:text="Centro de Enseñanza Técnico Industrial\nPlantel:\n Rio Santiago"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation_cliente"
+    app:startDestination="@+id/nav_home_cliente">
+
+    <fragment
+        android:id="@+id/nav_home_cliente"
+        android:name="com.example.gardenproyect.ui.home.HomeFragment_Cliente"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home_cliente">
+        <action
+            android:id="@+id/action_nav_home_cliente_to_nav_service_cliente"
+            app:destination="@id/nav_service_cliente" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_dinero_cliente"
+        android:name="com.example.gardenproyect.ui.dinero.DineroFragment_Cliente"
+        android:label="@string/menu_dinero_cliente"
+        tools:layout="@layout/fragment_dinero_cliente" />
+
+    <fragment
+        android:id="@+id/nav_help"
+        android:name="com.example.gardenproyect.ui.help.HelpFragment"
+        android:label="@string/menu_help"
+        tools:layout="@layout/fragment_help" />
+
+    <fragment
+        android:id="@+id/nav_service_cliente"
+        android:name="com.example.gardenproyect.ui.service.ServiceFragment_Cliente"
+        android:label="@string/menu_service_cliente"
+        tools:layout="@layout/fragment_service_cliente"/>
+
+    <fragment
+        android:id="@+id/nav_calendar_cliente"
+        android:name="com.example.gardenproyect.ui.calendar.CalendarFragment_Cliente"
+        android:label="@string/menu_calendar_cliente"
+        tools:layout="@layout/fragment_calendar_cliente"/>
+
+    <fragment
+        android:id="@+id/nav_time_cliente"
+        android:name="com.example.gardenproyect.ui.time.TimeFragment_Cliente"
+        android:label="@string/menu_time_cliente"
+        tools:layout="@layout/fragment_time_cliente"/>
+
+</navigation>
