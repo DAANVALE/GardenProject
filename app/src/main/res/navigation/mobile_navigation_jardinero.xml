@@ -9,7 +9,11 @@
         android:id="@+id/nav_home_jardinero"
         android:name="com.example.gardenproyect.ui.home.HomeFragment_Jardinero"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home_jardinero"/>
+        tools:layout="@layout/fragment_home_jardinero">
+        <action
+            android:id="@+id/action_nav_home_jardinero_to_nav_service_Jardinero"
+            app:destination="@id/nav_service_Jardinero" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_dinero_jardinero"

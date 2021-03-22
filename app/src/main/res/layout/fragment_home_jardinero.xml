@@ -39,6 +39,7 @@
         android:src="@drawable/jardinero"/>
 
     <Button
+        android:id="@+id/btnAgendar"
         android:layout_marginTop="50dp"
         android:background="@color/colorPrimary"
         android:layout_width="220dp"
