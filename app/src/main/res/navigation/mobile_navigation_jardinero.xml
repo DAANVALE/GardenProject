@@ -33,7 +33,11 @@
         android:name="com.example.gardenproyect.ui.calendar.CalendarFragment_Jardinero"
         android:label="@string/menu_calendar_jardinero"
         tools:layout="@layout/fragment_calendar_jardinero"
-        />
+        >
+        <action
+            android:id="@+id/action_nav_calendar_jardinero_to_nav_time_jardinero"
+            app:destination="@id/nav_time_jardinero" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_time_jardinero"
