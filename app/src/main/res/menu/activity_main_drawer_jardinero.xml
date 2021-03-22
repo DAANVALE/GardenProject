@@ -13,13 +13,16 @@
         <item
             android:id="@+id/nav_service_Jardinero"
             android:title="@string/menu_service_jardinero" />
-        <item
+
+     <!--   <item
             android:id="@+id/nav_calendar_jardinero"
             android:title="@string/menu_calendar_jardinero"
             />
         <item
             android:id="@+id/nav_time_jardinero"
             android:title="@string/menu_time_jardinero"/>
+     -->
+
         <item
             android:id="@+id/nav_comment_Jardinero"
             android:title="@string/menu_comment" />
