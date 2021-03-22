@@ -38,7 +38,7 @@
             android:background="@color/colorPrimary"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="Dia y hora"
+            android:text="Fecha"
             android:textSize="18dp"
             android:textStyle="bold"/>
 
