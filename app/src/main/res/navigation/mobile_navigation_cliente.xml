@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation_cliente"
-    app:startDestination="@+id/nav_home_cliente">
+    app:startDestination="@+id/nav_service_cliente">
 
     <fragment
         android:id="@+id/nav_home_cliente"
@@ -51,6 +51,10 @@
         android:id="@+id/nav_time_cliente"
         android:name="com.example.gardenproyect.ui.time.TimeFragment_Cliente"
         android:label="@string/menu_time_cliente"
-        tools:layout="@layout/fragment_time_cliente"/>
+        tools:layout="@layout/fragment_time_cliente">
+        <action
+            android:id="@+id/action_nav_time_cliente_to_nav_service_cliente"
+            app:destination="@id/nav_service_cliente" />
+    </fragment>
 
 </navigation>

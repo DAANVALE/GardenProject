@@ -112,6 +112,7 @@
             android:background="#ec1c24"/>
 
         <Button
+            android:id="@+id/btnHora"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
