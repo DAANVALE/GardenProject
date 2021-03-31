@@ -5,7 +5,6 @@
     android:id="@+id/mobile_navigation_cliente"
     app:startDestination="@+id/nav_service_cliente">
 
-    
     <fragment
         android:id="@+id/nav_home_cliente"
         android:name="com.example.gardenproyect.ui.home.HomeFragment_Cliente"
