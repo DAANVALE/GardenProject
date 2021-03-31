@@ -23,4 +23,6 @@
     <string name="menu_calendar_cliente">Calendario</string>
     <string name="menu_time_cliente">Horarios</string>
     <string name="menu_time_jardinero">Horario</string>
+
+    <string name="menu_typeService_cliente">Tipo de servicio</string>
 </resources>

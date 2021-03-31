@@ -33,6 +33,7 @@ public class ServiceFragment_Cliente extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         Button btnCalendar = view.findViewById(R.id.btnCalendar);
+        Button btnTypeService = view.findViewById(R.id.btnAgregarTipoServicio);
 
         btnCalendar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,5 +41,13 @@ public class ServiceFragment_Cliente extends Fragment {
                 Navigation.findNavController(v).navigate(R.id.nav_calendar_cliente);
             }
         });
+
+        btnTypeService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.typeServiceFragment_Cliente);
+            }
+        });
+
     }
 }

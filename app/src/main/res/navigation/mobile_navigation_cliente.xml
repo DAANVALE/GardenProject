@@ -57,4 +57,10 @@
             app:destination="@id/nav_service_cliente" />
     </fragment>
 
+    <fragment
+        android:id="@+id/typeServiceFragment_Cliente"
+        android:name="com.example.gardenproyect.ui.typeService.TypeServiceFragment_Cliente"
+        android:label="@string/menu_typeService_cliente"
+        tools:layout="@layout/fragment_type_service_cliente" />
+
 </navigation>
