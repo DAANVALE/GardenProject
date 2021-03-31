@@ -5,14 +5,12 @@
     android:id="@+id/mobile_navigation_cliente"
     app:startDestination="@+id/nav_service_cliente">
 
+    
     <fragment
         android:id="@+id/nav_home_cliente"
         android:name="com.example.gardenproyect.ui.home.HomeFragment_Cliente"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home_cliente">
-        <action
-            android:id="@+id/action_nav_home_cliente_to_nav_service_cliente"
-            app:destination="@id/nav_service_cliente" />
     </fragment>
 
     <fragment
