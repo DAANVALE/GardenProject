@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.service.ServiceFragment_Cliente">
+    tools:context=".ui.service.ServiceFragment_Cliente"
+    android:orientation="vertical"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintLeft_toRightOf="parent"
         android:orientation="vertical"
         android:gravity="center"
         android:background="#B5DFDA"
@@ -72,15 +70,13 @@
             android:textSize="20dp"
             android:textColor="#000000"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:text="Agregar +"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_marginTop="10dp"
-            android:textSize="20dp"
-            android:textColor="#000000"/>
+     <Button
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="Agregar +"
+         android:textSize="20dp"
+         android:textColor="#000000"
+         android:background="@color/colorPrimary"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -128,7 +124,5 @@
             android:textStyle="bold"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"/>
-
     </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
