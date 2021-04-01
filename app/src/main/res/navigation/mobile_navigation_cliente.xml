@@ -33,6 +33,9 @@
         <action
             android:id="@+id/action_nav_service_cliente_to_nav_calendar_cliente"
             app:destination="@id/nav_calendar_cliente" />
+        <action
+            android:id="@+id/action_nav_service_cliente_to_typeServiceFragment_Cliente"
+            app:destination="@id/typeServiceFragment_Cliente" />
     </fragment>
 
     <fragment

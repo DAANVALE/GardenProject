@@ -30,15 +30,51 @@
             android:textSize="18dp"
             android:textStyle="bold"/>
 
-        <Button
-            android:id="@+id/btnCalendar"
-            android:layout_marginTop="15dp"
-            android:background="@color/colorPrimary"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:text="Fecha"
-            android:textSize="18dp"
-            android:textStyle="bold"/>
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnDate"
+                android:layout_marginTop="15dp"
+                android:background="@color/colorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fecha"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/EdTDate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnHour"
+                android:layout_marginTop="15dp"
+                android:background="@color/colorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hora"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/EdTHour"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
