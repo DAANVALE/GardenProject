@@ -1,12 +1,17 @@
 package com.example.gardenproyect.ui.service;
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,38 +23,53 @@ import androidx.navigation.Navigation;
 import com.example.gardenproyect.R;
 import com.example.gardenproyect.ui.home.HomeViewModel_Cliente;
 
-public class ServiceFragment_Cliente extends Fragment implements View.OnClickListener {
+import java.util.Calendar;
+
+import static android.content.ContentValues.TAG;
+
+public class ServiceFragment_Cliente extends Fragment {
 
     private ServiceViewModel_Cliente ServiceViewModelCliente;
-    Button btnDate, btnHour;
-    EditText TxtVDate, TxtVHour;
+    private TextView TVDate;
+    private Button btnDate;
+    private DatePickerDialog.OnDateSetListener dateSetListener;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         ServiceViewModelCliente =
                 ViewModelProviders.of(this).get(ServiceViewModel_Cliente.class);
         View root = inflater.inflate(R.layout.fragment_service_cliente, container, false);
+
+        btnDate = root.findViewById(R.id.btnDate);
+        TVDate = root.findViewById(R.id.TVDate);
+
+        btnDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
+
+                DatePickerDialog dialog = new DatePickerDialog(getContext(), android.R.style.Theme_DeviceDefault_Dialog, dateSetListener, year, month, day);
+
+                dialog.show();
+            }
+        });
+
+        dateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                month = month +1;
+                Log.d(TAG, "onDateSet: dd/mm/yyyy: " + dayOfMonth + "/" + month + "/" + year);
+
+                String date = dayOfMonth + "/" + month + "/" + year;
+                TVDate.setText(date);
+
+            }
+        };
+
         return root;
-
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        btnDate = (Button) btnDate.findViewById(R.id.btnDate);
-        btnHour = (Button) btnHour.findViewById(R.id.btnHour);
-        TxtVDate = (EditText) TxtVDate.findViewById(R.id.EdTDate);
-        TxtVHour = (EditText) TxtVHour.findViewById(R.id.EdTHour);
-
-        btnDate.setOnClickListener(this);
-        btnHour.setOnClickListener(this);
-
-    }
-
-    @Override
-    public void onClick(View v) {
-
     }
 
     @Override

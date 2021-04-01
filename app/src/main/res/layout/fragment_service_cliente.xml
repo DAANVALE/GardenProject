@@ -46,10 +46,15 @@
                 android:textSize="18dp"
                 android:textStyle="bold"/>
 
-            <EditText
-                android:id="@+id/EdTDate"
+            <TextView
+                android:id="@+id/TVDate"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                android:text="Date"
+                android:textSize="25dp"
+                android:gravity="bottom"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"/>
 
         </LinearLayout>
 
@@ -69,10 +74,15 @@
                 android:textSize="18dp"
                 android:textStyle="bold"/>
 
-            <EditText
-                android:id="@+id/EdTHour"
+            <TextView
+                android:id="@+id/TVHour"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                android:text="Hour"
+                android:textSize="25dp"
+                android:gravity="bottom"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"/>
 
         </LinearLayout>
 
