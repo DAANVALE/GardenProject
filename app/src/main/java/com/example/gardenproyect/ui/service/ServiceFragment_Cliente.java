@@ -113,7 +113,5 @@ public class ServiceFragment_Cliente extends Fragment {
                 Navigation.findNavController(v).navigate(R.id.typeServiceFragment_Cliente);
             }
         });
-
     }
-
 }

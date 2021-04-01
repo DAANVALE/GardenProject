@@ -61,6 +61,15 @@
         android:id="@+id/typeServiceFragment_Cliente"
         android:name="com.example.gardenproyect.ui.typeService.TypeServiceFragment_Cliente"
         android:label="@string/menu_typeService_cliente"
-        tools:layout="@layout/fragment_type_service_cliente" />
+        tools:layout="@layout/fragment_type_service_cliente" >
+        <action
+            android:id="@+id/action_typeServiceFragment_Cliente_to_act"
+            app:destination="@id/act" />
+    </fragment>
+    <activity
+        android:id="@+id/act"
+        android:name="com.example.gardenproyect.act"
+        android:label="activity_act"
+        tools:layout="@layout/activity_act" />
 
 </navigation>
