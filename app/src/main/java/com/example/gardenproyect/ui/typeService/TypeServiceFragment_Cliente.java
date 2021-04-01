@@ -26,18 +26,4 @@ public class TypeServiceFragment_Cliente extends Fragment {
         View root = inflater.inflate(R.layout.fragment_type_service_cliente, container, false);
         return root;
     }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        Button Act = view.findViewById(R.id.Act);
-
-        Act.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.act);
-            }
-        });
-    }
 }
