@@ -31,8 +31,11 @@ public class ServiceFragment_Cliente extends Fragment {
 
     private ServiceViewModel_Cliente ServiceViewModelCliente;
     private TextView TVDate;
+    private TextView TVHour;
     private Button btnDate;
+    private Button btnHour;
     private DatePickerDialog.OnDateSetListener dateSetListener;
+    private TimePickerDialog.OnTimeSetListener timeSetListener;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -42,6 +45,8 @@ public class ServiceFragment_Cliente extends Fragment {
 
         btnDate = root.findViewById(R.id.btnDate);
         TVDate = root.findViewById(R.id.TVDate);
+        btnHour = root.findViewById(R.id.btnHour);
+        TVHour = root.findViewById(R.id.TVHour);
 
         btnDate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +70,30 @@ public class ServiceFragment_Cliente extends Fragment {
 
                 String date = dayOfMonth + "/" + month + "/" + year;
                 TVDate.setText(date);
+
+            }
+        };
+
+        btnHour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar cal = Calendar.getInstance();
+                int hour = cal.get(Calendar.HOUR_OF_DAY);
+                int minutes = cal.get(Calendar.MINUTE);
+
+                TimePickerDialog dialog = new TimePickerDialog(getContext(), android.R.style.Theme_DeviceDefault_Dialog, timeSetListener, hour, minutes, false);
+
+                dialog.show();
+            }
+        });
+
+        timeSetListener = new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                Log.d(TAG, "onTimeSet: hh:mm" + hourOfDay + ":" + minute);
+
+                String time = hourOfDay + ":" + minute;
+                TVHour.setText(time);
 
             }
         };
