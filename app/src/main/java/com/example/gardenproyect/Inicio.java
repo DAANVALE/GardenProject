@@ -17,7 +17,7 @@ public class Inicio extends AppCompatActivity {
     }
 
     public void BtnCliente(View v){
-        Intent itn = new Intent(this, Cliente.class);
+        Intent itn = new Intent(this, LoginScreen.class);
         startActivity(itn);
     }
 
