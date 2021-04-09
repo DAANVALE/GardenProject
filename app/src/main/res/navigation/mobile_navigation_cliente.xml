@@ -35,6 +35,9 @@
         <action
             android:id="@+id/action_nav_service_cliente_to_typeServiceFragment_Cliente"
             app:destination="@id/typeServiceFragment_Cliente" />
+        <action
+            android:id="@+id/action_nav_service_cliente_to_loginScreen"
+            app:destination="@id/loginScreen" />
     </fragment>
 
     <fragment
@@ -62,5 +65,10 @@
         android:name="com.example.gardenproyect.ui.typeService.TypeServiceFragment_Cliente"
         android:label="@string/menu_typeService_cliente"
         tools:layout="@layout/fragment_type_service_cliente" />
+    <activity
+        android:id="@+id/loginScreen"
+        android:name="com.example.gardenproyect.LoginScreen"
+        android:label="activity_login_screen"
+        tools:layout="@layout/activity_login_screen" />
 
 </navigation>

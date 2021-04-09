@@ -22,6 +22,8 @@ import androidx.navigation.Navigation;
 
 import com.example.gardenproyect.R;
 import com.example.gardenproyect.ui.home.HomeViewModel_Cliente;
+import com.google.android.material.button.MaterialButton;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Calendar;
 
@@ -30,12 +32,15 @@ import static android.content.ContentValues.TAG;
 public class ServiceFragment_Cliente extends Fragment {
 
     private ServiceViewModel_Cliente ServiceViewModelCliente;
+
     private TextView TVDate;
     private TextView TVHour;
     private Button btnDate;
     private Button btnHour;
     private DatePickerDialog.OnDateSetListener dateSetListener;
     private TimePickerDialog.OnTimeSetListener timeSetListener;
+
+    MaterialButton logoutButton;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -106,6 +111,7 @@ public class ServiceFragment_Cliente extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         Button btnTypeService = view.findViewById(R.id.btnAgregarTipoServicio);
+        logoutButton = view.findViewById(R.id.logoutButton);
 
         btnTypeService.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,5 +119,14 @@ public class ServiceFragment_Cliente extends Fragment {
                 Navigation.findNavController(v).navigate(R.id.typeServiceFragment_Cliente);
             }
         });
+
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Navigation.findNavController(v).navigate(R.id.loginScreen);
+            }
+        });
+
     }
 }

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "979507455007",
+    "project_id": "gardenclean-591d0",
+    "storage_bucket": "gardenclean-591d0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:979507455007:android:60c1d35130cdf1bf13e12a",
+        "android_client_info": {
+          "package_name": "com.example.gardenproyect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "979507455007-edjutf3om5f00o1ddfannt1gsfk8o685.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gardenproyect",
+            "certificate_hash": "4cbe868c75212c6e6354c176081925d875e92a92"
+          }
+        },
+        {
+          "client_id": "979507455007-hvg9qfirlav8tafbgct1ofagkqofin3c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWglYevRi_UBrZVvsSVyPiwdo8TeqUkqc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "979507455007-hvg9qfirlav8tafbgct1ofagkqofin3c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

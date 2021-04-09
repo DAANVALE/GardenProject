@@ -6,6 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.gardenproyect.ui.service.ServiceFragment_Cliente;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class Inicio extends AppCompatActivity {
 
     private View btnJardinero;
@@ -17,8 +21,17 @@ public class Inicio extends AppCompatActivity {
     }
 
     public void BtnCliente(View v){
-        Intent itn = new Intent(this, LoginScreen.class);
-        startActivity(itn);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if (user != null) {
+            Intent intent = new Intent(Inicio.this, Cliente.class);
+            startActivity(intent);
+            finish();
+        } else {
+            Intent itn = new Intent(this, LoginScreen.class);
+            startActivity(itn);
+            finish();
+        }
     }
 
     @Override
