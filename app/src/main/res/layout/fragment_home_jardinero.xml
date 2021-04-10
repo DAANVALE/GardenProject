@@ -31,13 +31,11 @@
         android:textSize="20dp"
         android:textColor="#000000"
         android:text="@string/nav_header_subtitle_jardinero" />
-
     <ImageView
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="220dp"
         android:src="@drawable/jardinero"/>
-
     <Button
         android:id="@+id/btnAgendar"
         android:layout_marginTop="50dp"
@@ -45,5 +43,6 @@
         android:layout_width="220dp"
         android:layout_height="40dp"
         android:text="Agenda"/>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
