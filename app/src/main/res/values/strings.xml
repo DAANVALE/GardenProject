@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">GardenProyect</string>
+    <string name="web_client_id">979507455007-hvg9qfirlav8tafbgct1ofagkqofin3c.apps.googleusercontent.com</string>
+
     <string name="title_activity_jardinero">Jardinero</string>
     <string name="title_activity_cliente">Cliente</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
