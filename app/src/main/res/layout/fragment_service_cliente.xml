@@ -173,6 +173,19 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"/>
 
+        <EditText
+            android:id="@+id/ETMensaje"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:hint="Ingrese el texto"/>
+
+        <Button
+            android:id="@+id/btnCrearDatos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Crear datos"/>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/logoutButton"
             android:layout_width="100dp"

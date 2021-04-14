@@ -24,8 +24,12 @@ import com.example.gardenproyect.R;
 import com.example.gardenproyect.ui.home.HomeViewModel_Cliente;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 import static android.content.ContentValues.TAG;
 
@@ -41,6 +45,10 @@ public class ServiceFragment_Cliente extends Fragment {
     private TimePickerDialog.OnTimeSetListener timeSetListener;
 
     MaterialButton logoutButton;
+
+    private EditText mETMensaje;
+    private Button mBtnCrearDatos;
+    private DatabaseReference mDataBase;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -112,6 +120,9 @@ public class ServiceFragment_Cliente extends Fragment {
 
         Button btnTypeService = view.findViewById(R.id.btnAgregarTipoServicio);
         logoutButton = view.findViewById(R.id.logoutButton);
+        mETMensaje = view.findViewById(R.id.ETMensaje);
+        mBtnCrearDatos = view.findViewById(R.id.btnCrearDatos);
+        mDataBase = FirebaseDatabase.getInstance().getReference();
 
         btnTypeService.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -125,6 +136,19 @@ public class ServiceFragment_Cliente extends Fragment {
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 Navigation.findNavController(v).navigate(R.id.loginScreen);
+            }
+        });
+
+        mBtnCrearDatos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String texto = mETMensaje.getText().toString();
+                Map<String, Object> usuarioMap = new HashMap<>();
+                usuarioMap.put("nombre", "giovanni");
+                usuarioMap.put("apellido", "vega");
+                usuarioMap.put("edad", 19);
+                usuarioMap.put("texto", texto);
+                mDataBase.child("Usuarios").push().setValue(usuarioMap);
             }
         });
 
