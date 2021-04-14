@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,494 +9,911 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center_vertical"
-        android:background="@color/colorPrimaryDark"
-        android:gravity="center_vertical"
-        >
-
-        <LinearLayout
-            android:layout_width="200dp"
-            android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:textSize="35dp"
-            android:textColor="@color/colorPrimary"
-            android:text="Aceptar"
-            android:textStyle="bold"/>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="right|center_vertical">
-            <CheckBox
-                android:layout_marginVertical="10dp"
-                android:layout_marginRight="20dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:buttonTint="@color/black"
-                android:background="@color/colorPrimary"
-                />
-        </LinearLayout>
-
-    </LinearLayout> <!-- Accept & check button -->
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginHorizontal="10dp"
-        android:orientation="horizontal"
-        android:gravity="center">
-
-        <LinearLayout
-            android:layout_width="250dp"
-            android:layout_height="2dp"
-            android:background="#d2d2d2"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Podado"
-            android:layout_marginHorizontal="10dp"/>
-
-        <LinearLayout
-            android:layout_width="250dp"
-            android:layout_height="2dp"
-            android:background="#d2d2d2"/>
-
-    </LinearLayout> <!-- __ other __ -->
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="5dp"
-        android:paddingVertical="5dp"
-        android:background="#B5DFDA">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="left|center_vertical">
-
-            <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_margin="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="$precio"
-                    android:textSize="19dp"
-                    android:layout_gravity="center"
-                    android:textColor="@color/black"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="$cost * mt2"
-                    android:textSize="15dp"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Podado \nde cesped"
-                    android:textSize="20dp"
-                    android:textColor="@color/black"/>
-            </LinearLayout>
-        </LinearLayout>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="top">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="right|center_vertical"
-            android:layout_marginRight="20dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center_vertical"
             >
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textin_cesped"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:hint="Mt2:"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                >
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    />
-            </com.google.android.material.textfield.TextInputLayout>
-
-        </LinearLayout>
-
-    </LinearLayout> <!-- Cesped -->
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginHorizontal="10dp"
-        android:orientation="horizontal"
-        android:gravity="center">
-
-        <LinearLayout
-            android:layout_width="250dp"
-            android:layout_height="2dp"
-            android:background="#d2d2d2"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Corte | Emparejar"
-            android:layout_marginHorizontal="10dp"/>
-
-        <LinearLayout
-            android:layout_width="250dp"
-            android:layout_height="2dp"
-            android:background="#d2d2d2"/>
-
-    </LinearLayout> <!-- __ other __ -->
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="5dp"
-        android:paddingVertical="5dp"
-        android:background="#B5DFDA">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="left|center_vertical">
 
             <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_margin="10dp">
-
+                android:layout_width="200dp"
+                android:layout_height="wrap_content">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="$cantidad"
-                    android:textSize="19dp"
-                    android:layout_gravity="center"
-                    android:textColor="@color/black"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="$costU"
-                    android:textSize="15dp"/>
+                    android:layout_marginLeft="20dp"
+                    android:textSize="35dp"
+                    android:textColor="@color/colorPrimary"
+                    android:text="Aceptar"
+                    android:textStyle="bold"/>
 
             </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Palmera"
-                    android:textSize="20dp"
-                    android:textColor="@color/black"/>
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:gravity="right|center_vertical"
-            android:layout_marginRight="20dp"
-            >
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textin_palmera"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:hint="cantidad:"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                >
-                <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                />
-            </com.google.android.material.textfield.TextInputLayout>
+                android:gravity="right|center_vertical">
 
-        </LinearLayout>
+                <Button
+                    android:id="@+id/btnserv_apt"
+                    android:layout_width="80dp"
+                    android:layout_height="60dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Apt"
+                    />
 
-    </LinearLayout> <!-- Palmera -->
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="5dp"
-        android:paddingVertical="5dp"
-        android:background="#B5DFDA">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="left|center_vertical">
-
-            <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_margin="10dp">
-
-                <TextView
+                <CheckBox
+                    android:id="@+id/checkbox"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginRight="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="$cantidad"
-                    android:textSize="19dp"
-                    android:layout_gravity="center"
-                    android:textColor="@color/black"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="$costU"
-                    android:textSize="15dp"/>
-
+                    android:buttonTint="@color/black"
+                    android:background="@color/colorPrimary"
+                    />
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Arbol"
-                    android:textSize="20dp"
-                    android:textColor="@color/black"/>
-            </LinearLayout>
-        </LinearLayout>
+        </LinearLayout> <!-- Accept & check button -->
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:gravity="right|center_vertical"
-            android:layout_marginRight="20dp"
-            >
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textin_arbol"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:hint="cantidad:"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                >
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    />
-            </com.google.android.material.textfield.TextInputLayout>
-
-        </LinearLayout>
-
-    </LinearLayout> <!-- Arbol -->
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="5dp"
-        android:paddingVertical="5dp"
-        android:background="#B5DFDA">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginHorizontal="10dp"
             android:orientation="horizontal"
-            android:gravity="left|center_vertical">
+            android:gravity="center">
 
             <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_margin="10dp">
+                android:layout_width="250dp"
+                android:layout_height="2dp"
+                android:background="#d2d2d2"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="$cantidad"
-                    android:textSize="19dp"
-                    android:layout_gravity="center"
-                    android:textColor="@color/black"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="$costU"
-                    android:textSize="15dp"/>
-
-            </LinearLayout>
-            <LinearLayout
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:text="Podado"
+                android:layout_marginHorizontal="10dp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Arbusto"
-                    android:textSize="20dp"
-                    android:textColor="@color/black"/>
-            </LinearLayout>
-        </LinearLayout>
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="2dp"
+                android:background="#d2d2d2"/>
+
+        </LinearLayout> <!-- __ Podado __ -->
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="right|center_vertical"
-            android:layout_marginRight="20dp"
-            >
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textin_arbusto"
-                android:layout_width="150dp"
+            android:layout_marginTop="5dp"
+            android:paddingVertical="5dp"
+            android:background="#B5DFDA">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="cantidad:"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                >
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:gravity="left|center_vertical">
+
+                <LinearLayout
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:inputType="number"
-                    />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
 
-        </LinearLayout>
+                    <TextView
+                        android:id="@+id/VT_pod_cesped"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$cantidad"
+                        android:textSize="19dp"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"/>
 
-    </LinearLayout> <!-- Arbusto -->
+                    <TextView
+                        android:id="@+id/V_pod_cesped"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$costoU"
+                        android:textSize="15dp"/>
 
-    <!--
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Podado \nde césped"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="right|center_vertical"
+                android:layout_marginRight="20dp"
+                >
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textin_cesped"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:hint="mt2:"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+        </LinearLayout> <!-- Césped -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginHorizontal="10dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="2dp"
+                android:background="#d2d2d2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Corte | Emparejar"
+                android:layout_marginHorizontal="10dp"/>
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="2dp"
+                android:background="#d2d2d2"/>
+
+        </LinearLayout> <!-- __ corte | emparejar __ -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:paddingVertical="5dp"
+            android:background="#B5DFDA">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="left|center_vertical">
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$cantidad"
+                        android:textSize="19dp"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$costU"
+                        android:textSize="15dp"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Palmera"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="right|center_vertical"
+                android:layout_marginRight="20dp"
+                >
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textin_palmera"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:hint="cantidad:"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+        </LinearLayout> <!-- Palmera -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:paddingVertical="5dp"
+            android:background="#B5DFDA">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="left|center_vertical">
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$cantidad"
+                        android:textSize="19dp"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$costU"
+                        android:textSize="15dp"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Arbol"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="right|center_vertical"
+                android:layout_marginRight="20dp"
+                >
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textin_arbol"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:hint="cantidad:"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+        </LinearLayout> <!-- Árbol -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:paddingVertical="5dp"
+            android:background="#B5DFDA">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="left|center_vertical">
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$cantidad"
+                        android:textSize="19dp"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$costU"
+                        android:textSize="15dp"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Arbusto"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="right|center_vertical"
+                android:layout_marginRight="20dp"
+                >
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textin_arbusto"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:hint="cantidad:"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+        </LinearLayout> <!-- Arbusto -->
+
+        <!--
     otros tipos de servicios
     -->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginHorizontal="10dp"
-        android:orientation="horizontal"
-        android:gravity="center">
-
         <LinearLayout
-            android:layout_width="250dp"
-            android:layout_height="2dp"
-            android:background="#d2d2d2"/>
-
-        <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Plantar"
-            android:layout_marginHorizontal="10dp"/>
-
-        <LinearLayout
-            android:layout_width="250dp"
-            android:layout_height="2dp"
-            android:background="#d2d2d2"/>
-
-    </LinearLayout> <!-- __ other __ -->
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="5dp"
-        android:paddingVertical="5dp"
-        android:background="#B5DFDA">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginHorizontal="10dp"
             android:orientation="horizontal"
-            android:gravity="left|center_vertical">
+            android:gravity="center">
 
             <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_margin="10dp">
+                android:layout_width="250dp"
+                android:layout_height="2dp"
+                android:background="#d2d2d2"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="$cantidad"
-                    android:textSize="19dp"
-                    android:layout_gravity="center"
-                    android:textColor="@color/black"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="$costU"
-                    android:textSize="15dp"/>
-
-            </LinearLayout>
-            <LinearLayout
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:text="Plantar"
+                android:layout_marginHorizontal="10dp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Arbol\nPalmera"
-                    android:textSize="20dp"
-                    android:textColor="@color/black"/>
-            </LinearLayout>
-        </LinearLayout>
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="2dp"
+                android:background="#d2d2d2"/>
+
+        </LinearLayout> <!-- __ plantar __ -->
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="right|center_vertical"
-            android:layout_marginRight="20dp"
-            >
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textin_pnt_ArbPal"
-                android:layout_width="150dp"
+            android:layout_marginTop="5dp"
+            android:paddingVertical="5dp"
+            android:background="#B5DFDA">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="cantidad:"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                >
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:gravity="left|center_vertical">
+
+                <LinearLayout
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:inputType="number"
-                    />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
 
-        </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$cantidad"
+                        android:textSize="19dp"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"/>
 
-    </LinearLayout> <!-- Arbol - Palmera -->
-</LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$costU"
+                        android:textSize="15dp"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Césped"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="right|center_vertical"
+                android:layout_marginRight="20dp"
+                >
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textin_pnt_cesped"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:hint="cantidad:"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+        </LinearLayout> <!-- Césped -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:paddingVertical="5dp"
+            android:background="#B5DFDA">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="left|center_vertical">
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$cantidad"
+                        android:textSize="19dp"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$costU"
+                        android:textSize="15dp"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Arbol\nPalmera"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="right|center_vertical"
+                android:layout_marginRight="20dp"
+                >
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textin_pnt_ArbPal"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:hint="cantidad:"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+        </LinearLayout> <!-- Árbol - Palmera -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:paddingVertical="5dp"
+            android:background="#B5DFDA">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="left|center_vertical">
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$cantidad"
+                        android:textSize="19dp"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$costU"
+                        android:textSize="15dp"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Arbusto"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="right|center_vertical"
+                android:layout_marginRight="20dp"
+                >
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textin_pnt_arbusto"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:hint="cantidad:"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+        </LinearLayout> <!-- Arbusto -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginHorizontal="10dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="2dp"
+                android:background="#d2d2d2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Retirar"
+                android:layout_marginHorizontal="10dp"/>
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="2dp"
+                android:background="#d2d2d2"/>
+
+        </LinearLayout> <!-- __ retirar __ -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:paddingVertical="5dp"
+            android:background="#B5DFDA">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="left|center_vertical">
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$cantidad"
+                        android:textSize="19dp"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$costU"
+                        android:textSize="15dp"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Césped"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="right|center_vertical"
+                android:layout_marginRight="20dp"
+                >
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textin_rt_cesped"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:hint="cantidad:"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+        </LinearLayout> <!-- Césped -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:paddingVertical="5dp"
+            android:background="#B5DFDA">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="left|center_vertical">
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$cantidad"
+                        android:textSize="19dp"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$costU"
+                        android:textSize="15dp"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Arbol\nPalmera"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="right|center_vertical"
+                android:layout_marginRight="20dp"
+                >
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textin_rt_ArbPal"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:hint="cantidad:"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+        </LinearLayout> <!-- Árbol - Palmera -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:paddingVertical="5dp"
+            android:background="#B5DFDA">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="left|center_vertical">
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$cantidad"
+                        android:textSize="19dp"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$costU"
+                        android:textSize="15dp"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Arbusto"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="right|center_vertical"
+                android:layout_marginRight="20dp"
+                >
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textin_rt_arbusto"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:hint="cantidad:"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+        </LinearLayout> <!-- Arbusto -->
+
+    </LinearLayout>
+</ScrollView>
