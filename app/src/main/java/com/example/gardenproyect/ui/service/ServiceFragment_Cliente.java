@@ -122,6 +122,8 @@ public class ServiceFragment_Cliente extends Fragment {
         logoutButton = view.findViewById(R.id.logoutButton);
         mETMensaje = view.findViewById(R.id.ETMensaje);
         mBtnCrearDatos = view.findViewById(R.id.btnCrearDatos);
+        TVDate = view.findViewById(R.id.TVDate);
+        TVHour = view.findViewById(R.id.TVHour);
         mDataBase = FirebaseDatabase.getInstance().getReference();
 
         btnTypeService.setOnClickListener(new View.OnClickListener() {
@@ -143,11 +145,15 @@ public class ServiceFragment_Cliente extends Fragment {
             @Override
             public void onClick(View v) {
                 String texto = mETMensaje.getText().toString();
+                String fecha = TVDate.getText().toString();
+                String hora = TVHour.getText().toString();
                 Map<String, Object> usuarioMap = new HashMap<>();
                 usuarioMap.put("nombre", "giovanni");
                 usuarioMap.put("apellido", "vega");
                 usuarioMap.put("edad", 19);
                 usuarioMap.put("texto", texto);
+                usuarioMap.put("fecha", fecha);
+                usuarioMap.put("hora", hora);
                 mDataBase.child("Usuarios").push().setValue(usuarioMap);
             }
         });
