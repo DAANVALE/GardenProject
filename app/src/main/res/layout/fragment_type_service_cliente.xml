@@ -212,6 +212,7 @@
                     android:layout_margin="10dp">
 
                     <TextView
+                        android:id="@+id/VT_crt_palmera"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="$cantidad"
@@ -220,6 +221,7 @@
                         android:textColor="@color/black"/>
 
                     <TextView
+                        android:id="@+id/V_crt_palmera"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="$costU"
@@ -248,7 +250,7 @@
                 android:layout_marginRight="20dp"
                 >
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textin_palmera"
+                    android:id="@+id/textin_crt_palmera"
                     android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:hint="cantidad:"
@@ -286,6 +288,7 @@
                     android:layout_margin="10dp">
 
                     <TextView
+                        android:id="@+id/VT_crt_arbol"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="$cantidad"
@@ -294,6 +297,7 @@
                         android:textColor="@color/black"/>
 
                     <TextView
+                        android:id="@+id/V_crt_arbol"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="$costU"
@@ -322,7 +326,7 @@
                 android:layout_marginRight="20dp"
                 >
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textin_arbol"
+                    android:id="@+id/textin_crt_arbol"
                     android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:hint="cantidad:"
@@ -360,6 +364,7 @@
                     android:layout_margin="10dp">
 
                     <TextView
+                        android:id="@+id/VT_crt_arbusto"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="$cantidad"
@@ -368,6 +373,7 @@
                         android:textColor="@color/black"/>
 
                     <TextView
+                        android:id="@+id/V_crt_arbusto"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="$costU"
@@ -396,7 +402,7 @@
                 android:layout_marginRight="20dp"
                 >
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textin_arbusto"
+                    android:id="@+id/textin_crt_arbusto"
                     android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:hint="cantidad:"
@@ -465,6 +471,7 @@
                     android:layout_margin="10dp">
 
                     <TextView
+                        android:id="@+id/VT_pln_cesped"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="$cantidad"
@@ -473,6 +480,7 @@
                         android:textColor="@color/black"/>
 
                     <TextView
+                        android:id="@+id/V_pln_cesped"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="$costU"
@@ -501,10 +509,10 @@
                 android:layout_marginRight="20dp"
                 >
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textin_pnt_cesped"
+                    android:id="@+id/textin_pln_cesped"
                     android:layout_width="110dp"
                     android:layout_height="wrap_content"
-                    android:hint="cantidad:"
+                    android:hint="mt2:"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     >
                     <com.google.android.material.textfield.TextInputEditText
@@ -539,6 +547,7 @@
                     android:layout_margin="10dp">
 
                     <TextView
+                        android:id="@+id/VT_pln_arbpal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="$cantidad"
@@ -547,6 +556,7 @@
                         android:textColor="@color/black"/>
 
                     <TextView
+                        android:id="@+id/V_pln_arbpal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="$costU"
@@ -575,7 +585,7 @@
                 android:layout_marginRight="20dp"
                 >
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textin_pnt_ArbPal"
+                    android:id="@+id/textin_pln_ArbPal"
                     android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:hint="cantidad:"
@@ -613,6 +623,7 @@
                     android:layout_margin="10dp">
 
                     <TextView
+                        android:id="@+id/VT_pln_arbusto"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="$cantidad"
@@ -621,6 +632,7 @@
                         android:textColor="@color/black"/>
 
                     <TextView
+                        android:id="@+id/V_pln_arbusto"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="$costU"
@@ -649,7 +661,7 @@
                 android:layout_marginRight="20dp"
                 >
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textin_pnt_arbusto"
+                    android:id="@+id/textin_pln_arbusto"
                     android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:hint="cantidad:"
@@ -714,6 +726,7 @@
                     android:layout_margin="10dp">
 
                     <TextView
+                        android:id="@+id/VT_rt_cesped"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="$cantidad"
@@ -722,6 +735,7 @@
                         android:textColor="@color/black"/>
 
                     <TextView
+                        android:id="@+id/V_rt_cesped"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="$costU"
@@ -788,6 +802,7 @@
                     android:layout_margin="10dp">
 
                     <TextView
+                        android:id="@+id/VT_rt_arbpal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="$cantidad"
@@ -796,6 +811,7 @@
                         android:textColor="@color/black"/>
 
                     <TextView
+                        android:id="@+id/V_rt_arbpal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="$costU"
@@ -862,6 +878,7 @@
                     android:layout_margin="10dp">
 
                     <TextView
+                        android:id="@+id/VT_rt_arbusto"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="$cantidad"
@@ -870,6 +887,7 @@
                         android:textColor="@color/black"/>
 
                     <TextView
+                        android:id="@+id/V_rt_arbusto"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="$costU"
