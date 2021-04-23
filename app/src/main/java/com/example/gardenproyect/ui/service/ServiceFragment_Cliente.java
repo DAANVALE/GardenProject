@@ -1,7 +1,10 @@
 package com.example.gardenproyect.ui.service;
 
+import android.Manifest;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.pm.PackageManager;
+import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,9 +15,12 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -22,6 +28,20 @@ import androidx.navigation.Navigation;
 
 import com.example.gardenproyect.R;
 import com.example.gardenproyect.ui.home.HomeViewModel_Cliente;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.MapsInitializer;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -33,9 +53,13 @@ import java.util.Map;
 
 import static android.content.ContentValues.TAG;
 
-public class ServiceFragment_Cliente extends Fragment {
+public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallback{
 
     private ServiceViewModel_Cliente ServiceViewModelCliente;
+
+    GoogleMap mGoogleMap;
+    MapView mMapView;
+    View root;
 
     private TextView TVDate;
     private TextView TVHour;
@@ -50,16 +74,22 @@ public class ServiceFragment_Cliente extends Fragment {
     private Button mBtnCrearDatos;
     private DatabaseReference mDataBase;
 
+    Button btnUbicacionActual;
+    private FusedLocationProviderClient ubicacion;
+    FirebaseDatabase database;
+    DatabaseReference refubicacion;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         ServiceViewModelCliente =
                 ViewModelProviders.of(this).get(ServiceViewModel_Cliente.class);
-        View root = inflater.inflate(R.layout.fragment_service_cliente, container, false);
+        root = inflater.inflate(R.layout.fragment_service_cliente, container, false);
 
         btnDate = root.findViewById(R.id.btnDate);
         TVDate = root.findViewById(R.id.TVDate);
         btnHour = root.findViewById(R.id.btnHour);
         TVHour = root.findViewById(R.id.TVHour);
+
 
         btnDate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -125,6 +155,12 @@ public class ServiceFragment_Cliente extends Fragment {
         TVDate = view.findViewById(R.id.TVDate);
         TVHour = view.findViewById(R.id.TVHour);
         mDataBase = FirebaseDatabase.getInstance().getReference();
+        btnUbicacionActual = view.findViewById(R.id.btnUbicacionActual);
+
+        database = FirebaseDatabase.getInstance();
+        refubicacion = database.getReference("ubicacion");
+
+        mMapView = (MapView) root.findViewById(R.id.map);
 
         btnTypeService.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -158,5 +194,63 @@ public class ServiceFragment_Cliente extends Fragment {
             }
         });
 
+        btnUbicacionActual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dameubicacion();
+            }
+        });
+
+        if (mMapView != null) {
+            mMapView.onCreate(null);
+            mMapView.onResume();
+            mMapView.getMapAsync(this);
+        }
+
     }
+
+    private void dameubicacion() {
+        if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            Toast.makeText(getActivity(), "Permiso aceptado", Toast.LENGTH_SHORT).show();
+        } else {
+            ActivityCompat.requestPermissions(getActivity(), new String[]{
+                    Manifest.permission.ACCESS_COARSE_LOCATION,
+                    Manifest.permission.ACCESS_FINE_LOCATION,
+            }, 1);
+        }
+
+        ubicacion = LocationServices.getFusedLocationProviderClient(getActivity());
+
+        ubicacion.getLastLocation().addOnSuccessListener(getActivity(), new OnSuccessListener<Location>() {
+            @Override
+            public void onSuccess(Location location) {
+                if (location != null){
+                    Double latitud = location.getLatitude();
+                    Double longitud = location.getLongitude();
+
+                    UbicacionActl ubi = new UbicacionActl(latitud, longitud);
+                    refubicacion.push().setValue(ubi);
+
+                    Toast.makeText(getActivity(), "Ubicacion agregada", Toast.LENGTH_SHORT).show();
+
+                }
+            }
+        });
+
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        MapsInitializer.initialize(getContext());
+
+        mGoogleMap = googleMap;
+        googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(20.6648312,-103.2086447)).title("Casa").snippet("Aqui haciendo el proyecto"));
+
+        CameraPosition Casa = CameraPosition.builder().target(new LatLng(20.6648312,-103.2086447)).zoom(16).bearing(0).tilt(45).build();
+
+        googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(Casa));
+    }
+    
 }
