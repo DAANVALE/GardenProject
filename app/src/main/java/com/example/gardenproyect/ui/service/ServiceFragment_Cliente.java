@@ -60,6 +60,7 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
     GoogleMap mGoogleMap;
     MapView mMapView;
     View root;
+    private static final int LOCATION_REQUEST = 500;
 
     private TextView TVDate;
     private TextView TVHour;
@@ -246,11 +247,30 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
         mGoogleMap = googleMap;
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
+        mGoogleMap.getUiSettings().setZoomControlsEnabled(true);
+
+        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_REQUEST);
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        mGoogleMap.setMyLocationEnabled(true);
+
+        marcadores(googleMap);
+    }
+
+    private void marcadores(GoogleMap googleMap) {
         googleMap.addMarker(new MarkerOptions().position(new LatLng(20.6648312,-103.2086447)).title("Casa").snippet("Aqui haciendo el proyecto"));
 
         CameraPosition Casa = CameraPosition.builder().target(new LatLng(20.6648312,-103.2086447)).zoom(16).bearing(0).tilt(45).build();
 
         googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(Casa));
     }
-    
+
 }
