@@ -65,6 +65,7 @@
         android:name="com.example.gardenproyect.ui.typeService.TypeServiceFragment_Cliente"
         android:label="@string/menu_typeService_cliente"
         tools:layout="@layout/fragment_type_service_cliente" />
+
     <activity
         android:id="@+id/loginScreen"
         android:name="com.example.gardenproyect.LoginScreen"

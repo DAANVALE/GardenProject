@@ -1,5 +1,7 @@
 package com.example.gardenproyect.ui.typeService;
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.icu.text.IDNA;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -22,9 +24,25 @@ import com.google.android.material.datepicker.MaterialTextInputPicker;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.textview.MaterialTextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
+
 import java.text.NumberFormat;
 
 public class TypeServiceFragment_Cliente extends Fragment{
+
+    private DatePickerDialog.OnDateSetListener dateSetListener;
+    private TimePickerDialog.OnTimeSetListener timeSetListener;
+
+    private DatabaseReference mDataBase;
+
+    FirebaseDatabase database;
+    DatabaseReference refubicacion;
 
     TextInputLayout pod_cesped,
             crt_palmera, crt_arbol, crt_arbusto,
@@ -38,7 +56,29 @@ public class TypeServiceFragment_Cliente extends Fragment{
             vt_rtcesped, vt_rtarbpal, vt_rtarbusto,
                 v_rtcesped, v_rtarbpal, v_rtarbusto;
 
+    /*1*/ int C_pod_csp = 0;
+    /*2*/ int C_crt_palmera = 0, C_crt_arbol = 0, C_crt_arbusto = 0;
+    /*3*/ int C_pln_cesped = 0, C_pln_arbpal = 0, C_pln_arbusto = 0;
+    /*4*/ int C_rt_cesped = 0, C_rt_arbpal = 0, C_rt_arbusto = 0;
+
+    /*1*/ int VTcrtcesped = 0;
+
+    /*2*/ int VTcrtpalmera = 0;
+    int VTcrtarbol = 0;
+    int VTcrtarbusto = 0;
+
+    /*3*/ int VTplncesped = 0;
+    int VTplnarbpal = 0;
+    int VTplnarbusto = 0;
+
+    /*4*/ int VTrtcesped = 0;
+    int VTrtarbpal = 0;
+    int VTrtarbusto = 0;
+
+    int servicios_totales_sum = 0;
+
     Button serv_apt;
+    Button serv_enviar;
 
     private TypeServiceViewModel_Cliente typeServiceViewModelCliente;
 
@@ -56,6 +96,13 @@ public class TypeServiceFragment_Cliente extends Fragment{
         super.onViewCreated(view, savedInstanceState);
 
         serv_apt = view.findViewById(R.id.btnserv_apt);
+        serv_enviar = view.findViewById(R.id.ButtonEnvSrv);
+        serv_enviar.setVisibility(View.INVISIBLE);
+
+        mDataBase = FirebaseDatabase.getInstance().getReference();
+
+        database = FirebaseDatabase.getInstance();
+        refubicacion = database.getReference("ubicacion");
 
         // 1
         pod_cesped = view.findViewById(R.id.textin_cesped);
@@ -69,6 +116,7 @@ public class TypeServiceFragment_Cliente extends Fragment{
         vt_crtpalmera = view.findViewById(R.id.VT_crt_palmera);
         vt_crtarbol = view.findViewById(R.id.VT_crt_arbol);
         vt_crtarbusto = view.findViewById(R.id.VT_crt_arbusto);
+
         final int Vcrtpalmera = 500; v_crtpalmera = view.findViewById(R.id.V_crt_palmera); v_crtpalmera.setText("$"+Vcrtpalmera);
         final int Vcrtarbol = 300; v_crtarbol = view.findViewById(R.id.V_crt_arbol); v_crtarbol.setText("$"+Vcrtarbol);
         final int Vcrtarbusto = 50; v_crtarbusto = view.findViewById(R.id.V_crt_arbusto); v_crtarbusto.setText("$"+Vcrtarbusto);
@@ -99,10 +147,7 @@ public class TypeServiceFragment_Cliente extends Fragment{
             @Override
             public void onClick(View v) {
 
-                /*1*/ int C_pod_csp;
-                /*2*/ int C_crt_palmera, C_crt_arbol, C_crt_arbusto;
-                /*3*/ int C_pln_cesped, C_pln_arbpal, C_pln_arbusto;
-                /*4*/ int C_rt_cesped, C_rt_arbpal, C_rt_arbusto;
+                serv_enviar.setVisibility(View.VISIBLE);
 
                 //1
                 try { C_pod_csp = Integer.parseInt(String.valueOf(pod_cesped.getEditText().getText())); } catch(Exception e) { C_pod_csp = 0; }
@@ -122,19 +167,19 @@ public class TypeServiceFragment_Cliente extends Fragment{
                 try { C_rt_arbpal = Integer.parseInt(String.valueOf(rt_arbpal.getEditText().getText())); } catch (Exception e) {C_rt_arbpal = 0;}
                 try { C_rt_arbusto = Integer.parseInt(String.valueOf(rt_arbusto.getEditText().getText())); } catch (Exception e) {C_rt_arbusto = 0;}
 
-                /*1*/ int VTcrtcesped = Vpdcesped * C_pod_csp;
+                VTcrtcesped = Vpdcesped * C_pod_csp;
 
-                /*2*/ int VTcrtpalmera = Vcrtpalmera * C_crt_palmera;
-                int VTcrtarbol = Vcrtarbol * C_crt_arbol;
-                int VTcrtarbusto = Vcrtarbusto * C_crt_arbusto;
+                /*2*/ VTcrtpalmera = Vcrtpalmera * C_crt_palmera;
+                VTcrtarbol = Vcrtarbol * C_crt_arbol;
+                VTcrtarbusto = Vcrtarbusto * C_crt_arbusto;
 
-                /*3*/ int VTplncesped = Vplncesped * C_pln_cesped;
-                int VTplnarbpal = Vplnarbpal * C_pln_arbpal;
-                int VTplnarbusto = Vplnarbusto * C_pln_arbusto;
+                /*3*/ VTplncesped = Vplncesped * C_pln_cesped;
+                VTplnarbpal = Vplnarbpal * C_pln_arbpal;
+                VTplnarbusto = Vplnarbusto * C_pln_arbusto;
 
-                /*4*/ int VTrtcesped = Vrtcesped * C_rt_cesped;
-                int VTrtarbpal = Vrtarbpal * C_rt_arbpal;
-                int VTrtarbusto = Vrtarbusto * C_rt_arbusto;
+                /*4*/ VTrtcesped = Vrtcesped * C_rt_cesped;
+                VTrtarbpal = Vrtarbpal * C_rt_arbpal;
+                VTrtarbusto = Vrtarbusto * C_rt_arbusto;
 
                 /*1*/ vt_pdcesped.setText("$"+VTcrtcesped);
 
@@ -149,6 +194,49 @@ public class TypeServiceFragment_Cliente extends Fragment{
                 /*4*/ vt_rtcesped.setText("$"+VTrtcesped);
                 vt_rtarbpal.setText("$"+VTrtarbpal);
                 vt_rtarbusto.setText("$"+VTrtarbusto);
+            }
+        });
+
+        serv_enviar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                servicios_totales_sum = C_pod_csp + C_crt_palmera + C_crt_arbol + C_crt_arbusto + C_pln_cesped + C_pln_arbpal + C_pln_arbusto + C_rt_cesped + C_rt_arbpal + C_rt_arbusto;
+
+                if(servicios_totales_sum > 0){
+                    Map<String, Object> Services = new HashMap<>();
+                    if(C_pod_csp > 0){
+                        Map<String, Object> S_pod_cesped = new HashMap<>();
+                        S_pod_cesped.put("Cantidad",C_pod_csp);
+                        S_pod_cesped.put("Costo",VTcrtcesped);
+                        S_pod_cesped.put("Costo unitario",Vpdcesped);
+                        mDataBase.child("Servicios").child("podado césped").push().setValue(S_pod_cesped);
+                    }
+                    if(C_crt_palmera > 0){
+                        Map<String, Object> S_crt_palmera = new HashMap<>();
+                        S_crt_palmera.put("Cantidad",C_crt_palmera);
+                        S_crt_palmera.put("Costo",VTcrtpalmera);
+                        S_crt_palmera.put("Costo unitario",Vcrtpalmera);
+                        mDataBase.child("Servicios").child("Podar palmera").push().setValue(S_crt_palmera);
+                    }
+                    if(C_crt_arbol > 0){
+                        Map<String, Object> S_crt_arbol = new HashMap<>();
+                        S_crt_arbol.put("Cantidad",C_crt_arbol);
+                        S_crt_arbol.put("Costo",VTcrtarbol);
+                        S_crt_arbol.put("Costo unitario",Vcrtarbol);
+                        mDataBase.child("Servicios").child("Podar árbol").push().setValue(S_crt_arbol);
+                    }
+                    if(C_crt_arbusto > 0){
+                        Map<String, Object> S_crt_arbusto = new HashMap<>();
+                        S_crt_arbusto.put("Cantidad",C_crt_arbusto);
+                        S_crt_arbusto.put("Costo",VTcrtarbusto);
+                        S_crt_arbusto.put("Costo unitario",Vcrtarbusto);
+                        mDataBase.child("Servicios").child("Podar arbusto").push().setValue(S_crt_arbusto);
+                    }
+                }
+
+
+
             }
         });
     }

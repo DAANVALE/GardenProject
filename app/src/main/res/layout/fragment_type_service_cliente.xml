@@ -48,14 +48,12 @@
                     android:text="Apt"
                     />
 
-                <CheckBox
-                    android:id="@+id/checkbox"
-                    android:layout_marginVertical="10dp"
+                <Button
+                    android:id="@+id/ButtonEnvSrv"
+                    android:text="Enviar"
                     android:layout_marginRight="20dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="@color/black"
-                    android:background="@color/colorPrimary"
+                    android:layout_height="match_parent"
                     />
             </LinearLayout>
 
