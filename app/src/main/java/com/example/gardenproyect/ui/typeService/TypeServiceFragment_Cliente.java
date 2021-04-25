@@ -204,39 +204,84 @@ public class TypeServiceFragment_Cliente extends Fragment{
                 servicios_totales_sum = C_pod_csp + C_crt_palmera + C_crt_arbol + C_crt_arbusto + C_pln_cesped + C_pln_arbpal + C_pln_arbusto + C_rt_cesped + C_rt_arbpal + C_rt_arbusto;
 
                 if(servicios_totales_sum > 0){
-                    Map<String, Object> Services = new HashMap<>();
+
+                    Map<String, Object> Service = new HashMap<>();
+
+                    Map<String, Object> S_pod_cesped = new HashMap<>();
+                    Map<String, Object> S_crt_palmera = new HashMap<>();
+                    Map<String, Object> S_crt_arbol = new HashMap<>();
+                    Map<String, Object> S_crt_arbusto = new HashMap<>();
+                    Map<String, Object> S_pln_cesped = new HashMap<>();
+                    Map<String, Object> S_pln_arbpal = new HashMap<>();
+                    Map<String, Object> S_pln_arbusto = new HashMap<>();
+                    Map<String, Object> S_rt_cesped = new HashMap<>();
+                    Map<String, Object> S_rt_arbpal = new HashMap<>();
+                    Map<String, Object> S_rt_arbusto = new HashMap<>();
+
                     if(C_pod_csp > 0){
-                        Map<String, Object> S_pod_cesped = new HashMap<>();
                         S_pod_cesped.put("Cantidad",C_pod_csp);
                         S_pod_cesped.put("Costo",VTcrtcesped);
                         S_pod_cesped.put("Costo unitario",Vpdcesped);
-                        mDataBase.child("Servicios").child("podado césped").push().setValue(S_pod_cesped);
-                    }
+                        Service.put("Podado césped",S_pod_cesped);
+                    } //1
                     if(C_crt_palmera > 0){
-                        Map<String, Object> S_crt_palmera = new HashMap<>();
                         S_crt_palmera.put("Cantidad",C_crt_palmera);
                         S_crt_palmera.put("Costo",VTcrtpalmera);
                         S_crt_palmera.put("Costo unitario",Vcrtpalmera);
-                        mDataBase.child("Servicios").child("Podar palmera").push().setValue(S_crt_palmera);
-                    }
+                        Service.put("Podado palmera",S_crt_palmera);
+                    } //2
                     if(C_crt_arbol > 0){
-                        Map<String, Object> S_crt_arbol = new HashMap<>();
                         S_crt_arbol.put("Cantidad",C_crt_arbol);
                         S_crt_arbol.put("Costo",VTcrtarbol);
                         S_crt_arbol.put("Costo unitario",Vcrtarbol);
-                        mDataBase.child("Servicios").child("Podar árbol").push().setValue(S_crt_arbol);
-                    }
+                        Service.put("Podado árbol", S_crt_arbol);
+                    } //3
                     if(C_crt_arbusto > 0){
-                        Map<String, Object> S_crt_arbusto = new HashMap<>();
                         S_crt_arbusto.put("Cantidad",C_crt_arbusto);
                         S_crt_arbusto.put("Costo",VTcrtarbusto);
                         S_crt_arbusto.put("Costo unitario",Vcrtarbusto);
-                        mDataBase.child("Servicios").child("Podar arbusto").push().setValue(S_crt_arbusto);
-                    }
+                        Service.put("Podado arbusto", S_crt_arbusto);
+                    } //4
+                    if(C_pln_cesped > 0){
+                        S_pln_cesped.put("Mt2", C_pln_cesped);
+                        S_pln_cesped.put("Costo", VTplncesped);
+                        S_pln_cesped.put("Costo unitario",Vplncesped);
+                        Service.put("Plantar césped",S_pln_cesped);
+                    } //5
+                    if(C_pln_arbpal > 0){
+                        S_pln_arbpal.put("Cantidad",C_pln_arbpal);
+                        S_pln_arbpal.put("Costo",VTplnarbpal);
+                        S_pln_arbpal.put("Costo unitario",Vplnarbpal);
+                        Service.put("Plantar árbol u palmera",S_pln_arbpal);
+                    } //6
+                    if(C_pln_arbusto > 0){
+                        S_pln_arbusto.put("Cantidad",C_pln_arbusto);
+                        S_pln_arbusto.put("Costo",VTplnarbusto);
+                        S_pln_arbusto.put("Costo unitario", Vplnarbusto);
+                        Service.put("Plantar arbusto",S_pln_arbusto);
+                    } //7
+                    if(C_rt_cesped > 0){
+                        S_rt_cesped.put("Cantidad",C_rt_cesped);
+                        S_rt_arbpal.put("Costo",VTrtcesped);
+                        S_rt_cesped.put("Costo unitario",Vrtcesped);
+                        Service.put("Retirar césped",S_rt_cesped);
+                    } //8
+                    if(C_rt_arbpal > 0){
+                        S_rt_arbpal.put("Cantidad",C_rt_arbpal);
+                        S_rt_arbpal.put("Costo",VTrtarbpal);
+                        S_rt_arbpal.put("Costo unitario",Vrtarbpal);
+                        Service.put("Retirar árbol u palmera",S_rt_arbpal);
+                    } //9
+                    if(C_rt_arbusto > 0){
+                        S_rt_arbusto.put("Cantidad",C_rt_arbusto);
+                        S_rt_arbusto.put("Costo",VTrtarbusto);
+                        S_rt_arbusto.put("Costo unitario",Vrtarbusto);
+                        Service.put("Retirar arbusto", S_rt_arbusto);
+                    } //10
+
+                    mDataBase.child("Servicio").push().setValue(Service);
                 }
-
                 Navigation.findNavController(v).navigate(R.id.nav_service_cliente);
-
             }
         });
     }
