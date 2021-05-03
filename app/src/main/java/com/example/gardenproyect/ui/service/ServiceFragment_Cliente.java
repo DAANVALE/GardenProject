@@ -3,6 +3,7 @@ package com.example.gardenproyect.ui.service;
 import android.Manifest;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
@@ -29,6 +30,7 @@ import androidx.navigation.Navigation;
 import com.example.gardenproyect.R;
 import com.example.gardenproyect.ui.home.HomeViewModel_Cliente;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -42,15 +44,23 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.libraries.places.api.Places;
+import com.google.android.libraries.places.api.model.Place;
+import com.google.android.libraries.places.widget.Autocomplete;
+import com.google.android.libraries.places.widget.AutocompleteActivity;
+import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
+import static android.app.Activity.RESULT_OK;
 import static android.content.ContentValues.TAG;
 
 public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallback{
@@ -79,6 +89,9 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
     private FusedLocationProviderClient ubicacion;
     FirebaseDatabase database;
     DatabaseReference refubicacion;
+
+    EditText editText;
+    TextView textView1, textView2;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -163,6 +176,11 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
 
         mMapView = (MapView) root.findViewById(R.id.map);
 
+        editText = view.findViewById(R.id.edit_text);
+        textView1 = view.findViewById(R.id.text_view1);
+        textView2 = view.findViewById(R.id.text_view2);
+        Places.initialize(getActivity(), "AIzaSyAdD7LnLkwWg--MB8qf0Ko7Cm_uIfv1vOc");
+
         btnTypeService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -207,6 +225,21 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
             mMapView.onResume();
             mMapView.getMapAsync(this);
         }
+
+        editText.setFocusable(false);
+        editText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                List<Place.Field> fieldList = Arrays.asList(Place.Field.ADDRESS,
+                        Place.Field.LAT_LNG, Place.Field.NAME);
+
+                Intent intent = new Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY
+                        , fieldList).build(getActivity());
+
+                startActivityForResult(intent, 100);
+
+            }
+        });
 
     }
 
@@ -273,4 +306,17 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
         googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(Casa));
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 100 && resultCode == RESULT_OK){
+            Place place = Autocomplete.getPlaceFromIntent(data);
+            editText.setText(place.getAddress());
+            textView1.setText(String.format("Nombre locacion : %s", place.getName()));
+            textView2.setText(String.valueOf(place.getLatLng()));
+        }else if (resultCode == AutocompleteActivity.RESULT_ERROR){
+            Status status = Autocomplete.getStatusFromIntent(data);
+            Toast.makeText(getActivity(), status.getStatusMessage(), Toast.LENGTH_SHORT).show();
+        }
+    }
 }
