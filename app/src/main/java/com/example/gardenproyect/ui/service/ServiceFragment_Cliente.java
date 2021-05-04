@@ -218,8 +218,6 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
             @Override
             public void onClick(View v) {
                 String texto = mETMensaje.getText().toString();
-                TVDate.setText(dia);
-                TVHour.setText(hora);
                 String fechas = dia;
                 String horas = hora;
                 Map<String, Object> usuarioMap = new HashMap<>();
