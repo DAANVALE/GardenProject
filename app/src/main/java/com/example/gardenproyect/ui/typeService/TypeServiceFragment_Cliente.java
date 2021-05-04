@@ -97,7 +97,7 @@ public class TypeServiceFragment_Cliente extends Fragment{
 
         serv_apt = view.findViewById(R.id.btnserv_apt);
         serv_enviar = view.findViewById(R.id.ButtonEnvSrv);
-        serv_enviar.setVisibility(View.INVISIBLE);
+        serv_enviar.setVisibility(View.GONE);
 
         mDataBase = FirebaseDatabase.getInstance().getReference();
 

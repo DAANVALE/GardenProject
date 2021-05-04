@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -23,23 +24,18 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.Navigation;
 
 import com.example.gardenproyect.R;
-import com.example.gardenproyect.ui.home.HomeViewModel_Cliente;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -163,6 +159,10 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
         super.onViewCreated(view, savedInstanceState);
 
         Button btnTypeService = view.findViewById(R.id.btnAgregarTipoServicio);
+        final LinearLayout LinearTarj = view.findViewById(R.id.lyt_tarjeta);
+        Button btn_tarjeta = view.findViewById(R.id.btntarj);
+        Button btn_efectivo = view.findViewById(R.id.btnefec);
+
         logoutButton = view.findViewById(R.id.logoutButton);
         mETMensaje = view.findViewById(R.id.ETMensaje);
         mBtnCrearDatos = view.findViewById(R.id.btnCrearDatos);
@@ -185,6 +185,20 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(v).navigate(R.id.typeServiceFragment_Cliente);
+            }
+        });
+
+        btn_tarjeta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LinearTarj.setVisibility(View.VISIBLE);
+            }
+        });
+
+        btn_efectivo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LinearTarj.setVisibility(View.GONE);
             }
         });
 

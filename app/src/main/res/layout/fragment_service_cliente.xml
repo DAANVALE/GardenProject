@@ -126,36 +126,6 @@
 
         </LinearLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="Podado de arbol"
-            android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="25dp"
-            android:textSize="20dp"
-            android:textColor="#000000"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:text="Podado"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="20dp"
-            android:textSize="20dp"
-            android:textColor="#000000"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:text="Plantar"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="20dp"
-            android:textSize="20dp"
-            android:textColor="#000000"/>
-
      <Button
          android:id="@+id/btnAgregarTipoServicio"
          android:layout_width="wrap_content"
@@ -179,9 +149,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center">
+            android:gravity="center"
+            android:layout_marginBottom="20dp">
             <Button
                 android:background="@color/colorPrimaryDark"
+                android:id="@+id/btnefec"
                 android:layout_width="120dp"
                 android:layout_height="40dp"
                 android:text="Efectivo"
@@ -192,6 +164,7 @@
 
             <Button
                 android:background="@color/colorPrimaryDark"
+                android:id="@+id/btntarj"
                 android:layout_gravity="center"
                 android:layout_width="120dp"
                 android:layout_height="40dp"
@@ -199,9 +172,79 @@
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:layout_marginLeft="20px"/>
-
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/lyt_tarjeta"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginHorizontal="20dp"
+                >
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/TarjClabe"
+                    android:hint="CLABE:"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLength="16"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginHorizontal="20dp"
+                >
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/TarjVenc"
+                    android:hint="VENC"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="date"
+                        android:maxLength="4"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:hint="CVV:"
+                    android:id="@+id/TarjCvv"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_marginLeft="20dp"
+                    >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"></LinearLayout>
         <Button
             android:background="@color/colorPrimary"
             android:layout_width="match_parent"
@@ -228,9 +271,9 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/logoutButton"
-            android:layout_width="100dp"
+            android:layout_width="111dp"
             android:layout_height="wrap_content"
-            android:text="LOGOUT"/>
+            android:text="LOGOUT" />
 
     </LinearLayout>
 </ScrollView>
