@@ -328,6 +328,8 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
             editText.setText(place.getAddress());
             textView1.setText(String.format("Nombre locacion : %s", place.getName()));
             textView2.setText(String.valueOf(place.getLatLng()));
+            mGoogleMap.clear();
+            mGoogleMap.addMarker(new MarkerOptions().position(place.getLatLng()).title(place.getName()));
         }else if (resultCode == AutocompleteActivity.RESULT_ERROR){
             Status status = Autocomplete.getStatusFromIntent(data);
             Toast.makeText(getActivity(), status.getStatusMessage(), Toast.LENGTH_SHORT).show();
