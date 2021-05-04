@@ -86,6 +86,8 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
     FirebaseDatabase database;
     DatabaseReference refubicacion;
 
+    String dia = "Date";
+    String hora = "Time";
     EditText editText;
     TextView textView1, textView2;
 
@@ -118,12 +120,14 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
         dateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+
                 month = month +1;
                 Log.d(TAG, "onDateSet: dd/mm/yyyy: " + dayOfMonth + "/" + month + "/" + year);
 
                 String date = dayOfMonth + "/" + month + "/" + year;
-                TVDate.setText(date);
 
+                TVDate.setText(date);
+                dia = date;
             }
         };
 
@@ -147,7 +151,7 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
 
                 String time = hourOfDay + ":" + minute;
                 TVHour.setText(time);
-
+                hora = time;
             }
         };
 
@@ -214,18 +218,23 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
             @Override
             public void onClick(View v) {
                 String texto = mETMensaje.getText().toString();
-                String fecha = TVDate.getText().toString();
-                String hora = TVHour.getText().toString();
+                TVDate.setText(dia);
+                TVHour.setText(hora);
+                String fechas = dia;
+                String horas = hora;
                 Map<String, Object> usuarioMap = new HashMap<>();
                 usuarioMap.put("nombre", "giovanni");
                 usuarioMap.put("apellido", "vega");
                 usuarioMap.put("edad", 19);
                 usuarioMap.put("texto", texto);
-                usuarioMap.put("fecha", fecha);
-                usuarioMap.put("hora", hora);
+                usuarioMap.put("fecha", fechas);
+                usuarioMap.put("hora", horas);
                 mDataBase.child("Usuarios").push().setValue(usuarioMap);
             }
         });
+
+        TVDate.setText(dia);
+        TVHour.setText(hora);
 
         btnUbicacionActual.setOnClickListener(new View.OnClickListener() {
             @Override

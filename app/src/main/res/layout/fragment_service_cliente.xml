@@ -223,6 +223,7 @@
                         android:inputType="date"
                         android:maxLength="4"
                         />
+
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="120dp"
