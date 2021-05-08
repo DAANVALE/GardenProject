@@ -18,8 +18,17 @@ public class Inicio extends AppCompatActivity {
     private View btnCliente;
 
     public void BtnJardinero(View v){
-        Intent itn = new Intent(this,Jardinero.class);
-        startActivity(itn);
+        FirebaseUser userTwo = FirebaseAuth.getInstance().getCurrentUser();
+
+        if (userTwo != null) {
+            Intent intent = new Intent(Inicio.this, Jardinero.class);
+            startActivity(intent);
+            finish();
+        } else {
+            Intent itn = new Intent(this, LoginScreenTwo.class);
+            startActivity(itn);
+            finish();
+        }
     }
 
     public void BtnCliente(View v){

@@ -26,7 +26,11 @@
         android:name="com.example.gardenproyect.ui.service.ServiceFragment_Jardinero"
         android:label="@string/menu_service_jardinero"
         tools:layout="@layout/fragment_service_jardinero"
-        />
+        >
+        <action
+            android:id="@+id/action_nav_service_Jardinero_to_loginScreenTwo"
+            app:destination="@id/loginScreenTwo" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_calendar_jardinero"
@@ -56,6 +60,12 @@
         android:name="com.example.gardenproyect.ui.comment.CommentFragment_Jardinero"
         android:label="@string/menu_comment"
         tools:layout="@layout/fragment_comment_jardinero"/>
+
+    <activity
+        android:id="@+id/loginScreenTwo"
+        android:name="com.example.gardenproyect.LoginScreenTwo"
+        android:label="activity_login_screen_two"
+        tools:layout="@layout/activity_login_screen_two" />
 
 
 </navigation>
