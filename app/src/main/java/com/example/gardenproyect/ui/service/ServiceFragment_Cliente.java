@@ -91,6 +91,10 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
     EditText editText;
     TextView textView1, textView2;
 
+
+    boolean Busqueda_de_ubicacion = false;
+    String lat, lon;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         ServiceViewModelCliente =
@@ -217,6 +221,8 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
         mBtnCrearDatos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String Nombre_direccion = textView1.getText().toString();
+                String Coordenadas_ubicacion = textView2.getText().toString();
                 String texto = mETMensaje.getText().toString();
                 String fechas = dia;
                 String horas = hora;
@@ -224,6 +230,13 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
                 usuarioMap.put("nombre", "giovanni");
                 usuarioMap.put("apellido", "vega");
                 usuarioMap.put("edad", 19);
+                if (Busqueda_de_ubicacion == true) {
+                    usuarioMap.put("nombre de dirección", Nombre_direccion);
+                    usuarioMap.put("coordenadas de ubicacion", Coordenadas_ubicacion);
+                }else{
+                    usuarioMap.put("coordenada latitud", lat);
+                    usuarioMap.put("coordenada longitud", lon);
+                }
                 usuarioMap.put("texto", texto);
                 usuarioMap.put("fecha", fechas);
                 usuarioMap.put("hora", horas);
@@ -233,13 +246,6 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
 
         TVDate.setText(dia);
         TVHour.setText(hora);
-
-        btnUbicacionActual.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dameubicacion();
-            }
-        });
 
         if (mMapView != null) {
             mMapView.onCreate(null);
@@ -264,7 +270,7 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
 
     }
 
-    private void dameubicacion() {
+    private void dameubicacion(final GoogleMap googleMap) {
         if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             Toast.makeText(getActivity(), "Permiso aceptado", Toast.LENGTH_SHORT).show();
         } else {
@@ -284,10 +290,17 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
                     Double longitud = location.getLongitude();
 
                     UbicacionActl ubi = new UbicacionActl(latitud, longitud);
-                    refubicacion.push().setValue(ubi);
+                    //refubicacion.push().setValue(ubi);
+                    lat = latitud.toString();
+                    lon = longitud.toString();
 
                     Toast.makeText(getActivity(), "Ubicacion agregada", Toast.LENGTH_SHORT).show();
 
+                    googleMap.addMarker(new MarkerOptions().position(new LatLng(latitud, longitud)).title("Ubicación actual"));
+
+                    CameraPosition Ubicación_actual = CameraPosition.builder().target(new LatLng(latitud, longitud)).zoom(16).bearing(0).tilt(45).build();
+
+                    googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(Ubicación_actual));
                 }
             }
         });
@@ -316,15 +329,7 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
         }
         mGoogleMap.setMyLocationEnabled(true);
 
-        marcadores(googleMap);
-    }
-
-    private void marcadores(GoogleMap googleMap) {
-        googleMap.addMarker(new MarkerOptions().position(new LatLng(20.6648312,-103.2086447)).title("Casa").snippet("Aqui haciendo el proyecto"));
-
-        CameraPosition Casa = CameraPosition.builder().target(new LatLng(20.6648312,-103.2086447)).zoom(16).bearing(0).tilt(45).build();
-
-        googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(Casa));
+        dameubicacion(googleMap);
     }
 
     @Override
@@ -333,10 +338,13 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
         if (requestCode == 100 && resultCode == RESULT_OK){
             Place place = Autocomplete.getPlaceFromIntent(data);
             editText.setText(place.getAddress());
-            textView1.setText(String.format("Nombre locacion : %s", place.getName()));
+            textView1.setText(String.format("%s", place.getName()));
             textView2.setText(String.valueOf(place.getLatLng()));
             mGoogleMap.clear();
             mGoogleMap.addMarker(new MarkerOptions().position(place.getLatLng()).title(place.getName()));
+            CameraPosition Ubi_buscada = CameraPosition.builder().target(place.getLatLng()).zoom(16).bearing(0).tilt(45).build();
+            mGoogleMap.moveCamera(CameraUpdateFactory.newCameraPosition(Ubi_buscada));
+            Busqueda_de_ubicacion = true;
         }else if (resultCode == AutocompleteActivity.RESULT_ERROR){
             Status status = Autocomplete.getStatusFromIntent(data);
             Toast.makeText(getActivity(), status.getStatusMessage(), Toast.LENGTH_SHORT).show();
