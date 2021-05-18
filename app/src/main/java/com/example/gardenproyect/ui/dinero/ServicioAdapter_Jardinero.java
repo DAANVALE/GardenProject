@@ -16,8 +16,11 @@ public class ServicioAdapter_Jardinero extends RecyclerView.Adapter<ServicioAdap
 
     private int resourse;
     private ArrayList<ServicioRecicler_Jardinero> recicler_jardineros;
+    /*private ArrayList<ServicioRecicler_Jardinero> recicler_jardinerosDay;
+    private ArrayList<ServicioRecicler_Jardinero> recicler_jardinerosPlace;*/
 
-    public ServicioAdapter_Jardinero(ArrayList<ServicioRecicler_Jardinero> recicler_jardineros, int resourse){
+    public ServicioAdapter_Jardinero(ArrayList<ServicioRecicler_Jardinero> recicler_jardineros,
+                                     int resourse){
         this.resourse = resourse;
         this.recicler_jardineros = recicler_jardineros;
     }
@@ -32,7 +35,9 @@ public class ServicioAdapter_Jardinero extends RecyclerView.Adapter<ServicioAdap
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ServicioRecicler_Jardinero servicioRecicler_jardinero = recicler_jardineros.get(position);
-        holder.textViewAdapter.setText(servicioRecicler_jardinero.getText());
+        holder.textViewAdapterTime.setText(servicioRecicler_jardinero.getTextTime());
+        holder.textViewAdapterDay.setText(servicioRecicler_jardinero.getTextDay());
+        holder.textViewAdapterPlace.setText(servicioRecicler_jardinero.getTextPlace());
     }
 
     @Override
@@ -41,14 +46,18 @@ public class ServicioAdapter_Jardinero extends RecyclerView.Adapter<ServicioAdap
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView textViewAdapter;
+        private TextView textViewAdapterTime;
+        private TextView textViewAdapterDay;
+        private TextView textViewAdapterPlace;
         public View view;
 
         public ViewHolder(View view){
             super(view);
 
             this.view = view;
-            this.textViewAdapter = (TextView) view.findViewById(R.id.textViewService);
+            this.textViewAdapterTime = (TextView) view.findViewById(R.id.textViewServiceTime);
+            this.textViewAdapterDay = (TextView) view.findViewById(R.id.textViewServiceDay);
+            this.textViewAdapterPlace = (TextView) view.findViewById(R.id.textViewServicePlace);
         }
     }
 }

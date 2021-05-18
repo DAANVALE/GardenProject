@@ -21,6 +21,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.gson.internal.$Gson$Preconditions;
 
 import java.util.ArrayList;
 
@@ -32,6 +33,8 @@ public class DineroFragment_Jardinero extends Fragment {
 
     private ServicioAdapter_Jardinero mAdapter;
     private RecyclerView mRecicler;
+    private ArrayList<ServicioRecicler_Jardinero> mListTime = new ArrayList<>();
+    private ArrayList<ServicioRecicler_Jardinero> mListDay = new ArrayList<>();
     private ArrayList<ServicioRecicler_Jardinero> mList = new ArrayList<>();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -59,8 +62,13 @@ public class DineroFragment_Jardinero extends Fragment {
                     mList.clear();
 
                     for (DataSnapshot ds: snapshot.getChildren()){
-                        String fecha = ds.child("hora").getValue().toString();
-                        mList.add(new ServicioRecicler_Jardinero(fecha));
+                        String fecha = "";
+                        String lugar = "";
+                        String dia = "";
+                        try{fecha = ds.child("hora").getValue().toString();}catch (Exception f){fecha = "sindato";}
+                        try{dia = ds.child("fecha").getValue().toString();}catch (Exception f){fecha = "sindato";}
+                        try { lugar = ds.child("nombre de dirección").getValue().toString(); } catch (Exception l) { lugar = "sindato"; }
+                        mList.add(new ServicioRecicler_Jardinero(fecha,dia,lugar));
                     }
                     mAdapter = new ServicioAdapter_Jardinero(mList,R.layout.reciclerservicio_jardinero);
                         mRecicler.setAdapter(mAdapter);
