@@ -35,7 +35,7 @@ public class Jardinero extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home_jardinero, R.id.nav_dinero_jardinero, R.id.nav_help, R.id.nav_comment_Jardinero, R.id.nav_service_Jardinero)
+                R.id.nav_home_jardinero, R.id.nav_dinero_jardinero, R.id.nav_help, R.id.nav_comment_Jardinero, R.id.nav_service_Jardinero, R.id.nav_service_JardineroTwo)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_jardinero);

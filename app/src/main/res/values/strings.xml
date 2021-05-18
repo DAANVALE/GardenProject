@@ -21,6 +21,7 @@
 
     <string name="menu_service_cliente">Servicio</string>
     <string name="menu_service_jardinero">Servicios</string>
+    <string name="menu_service_jardineroTwo">Servicios</string>
     <string name="menu_calendar_jardinero">Calendario</string>
     <string name="menu_calendar_cliente">Calendario</string>
     <string name="menu_time_cliente">Horarios</string>

@@ -7,18 +7,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.navigation.Navigation;
 
 import com.example.gardenproyect.R;
-import com.example.gardenproyect.ui.home.HomeViewModel_Cliente;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -27,12 +23,10 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.material.button.MaterialButton;
-import com.google.firebase.auth.FirebaseAuth;
 
-public class ServiceFragment_Jardinero extends Fragment implements OnMapReadyCallback {
+public class ServiceFragment_JardineroTwo extends Fragment implements OnMapReadyCallback {
 
-    private ServiceViewModel_Jardinero ServiceViewModelJardinero;
+    private ServiceViewModel_JardineroTwo ServiceViewModelJardineroTwo;
 
     GoogleMap mGoogleMap;
     MapView mMapView;
@@ -44,9 +38,9 @@ public class ServiceFragment_Jardinero extends Fragment implements OnMapReadyCal
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        ServiceViewModelJardinero =
-                ViewModelProviders.of(this).get(ServiceViewModel_Jardinero.class);
-        root = inflater.inflate(R.layout.fragment_service_jardinero, container, false);
+        ServiceViewModelJardineroTwo =
+                ViewModelProviders.of(this).get(ServiceViewModel_JardineroTwo.class);
+        root = inflater.inflate(R.layout.fragment_service_jardinero_two, container, false);
 
 
 
@@ -74,7 +68,7 @@ public class ServiceFragment_Jardinero extends Fragment implements OnMapReadyCal
         btnTerminar.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.nav_service_JardineroTwo);
+
             }
         });
 

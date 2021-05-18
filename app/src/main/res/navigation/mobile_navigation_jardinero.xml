@@ -30,6 +30,9 @@
         <action
             android:id="@+id/action_nav_service_Jardinero_to_loginScreenTwo"
             app:destination="@id/loginScreenTwo" />
+        <action
+            android:id="@+id/action_nav_service_Jardinero_to_nav_service_JardineroTwo"
+            app:destination="@id/nav_service_JardineroTwo" />
     </fragment>
 
     <fragment
@@ -53,5 +56,11 @@
         android:name="com.example.gardenproyect.LoginScreenTwo"
         android:label="activity_login_screen_two"
         tools:layout="@layout/activity_login_screen_two" />
+
+    <fragment
+        android:id="@+id/nav_service_JardineroTwo"
+        android:name="com.example.gardenproyect.ui.service.ServiceFragment_JardineroTwo"
+        android:label="@string/menu_service_jardineroTwo"
+        tools:layout="@layout/fragment_service_jardinero_two"/>
 
 </navigation>
