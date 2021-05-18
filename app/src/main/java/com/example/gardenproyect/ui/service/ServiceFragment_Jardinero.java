@@ -61,12 +61,12 @@ public class ServiceFragment_Jardinero extends Fragment implements OnMapReadyCal
         btnComenzar = (Button) root.findViewById(R.id.comenzarjardinero);
         btnTerminar = (Button) root.findViewById(R.id.terminarjardinero);
 
-        btnTerminar.setVisibility(View.INVISIBLE);
+        btnTerminar.setVisibility(View.GONE);
 
         btnComenzar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btnComenzar.setVisibility(View.INVISIBLE);
+                btnComenzar.setVisibility(View.GONE);
                 btnTerminar.setVisibility(View.VISIBLE);
             }
         });
