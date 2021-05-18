@@ -213,13 +213,5 @@
             android:textSize="18dp"
             android:textStyle="bold"/>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/logoutButton"
-            android:layout_width="111dp"
-            android:layout_height="wrap_content"
-            android:text="LOGOUT"
-            android:textSize="18dp"
-            android:textStyle="bold"/>
-
     </LinearLayout>
 </ScrollView>

@@ -33,8 +33,6 @@ public class ServiceFragment_Jardinero extends Fragment implements OnMapReadyCal
 
     private ServiceViewModel_Jardinero ServiceViewModelJardinero;
 
-    MaterialButton logoutButton;
-
     GoogleMap mGoogleMap;
     MapView mMapView;
     View root;
@@ -52,16 +50,7 @@ public class ServiceFragment_Jardinero extends Fragment implements OnMapReadyCal
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        logoutButton = view.findViewById(R.id.logoutButton);
         mMapView = (MapView) root.findViewById(R.id.map);
-
-        logoutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                Navigation.findNavController(v).navigate(R.id.loginScreenTwo);
-            }
-        });
 
         if (mMapView != null) {
             mMapView.onCreate(null);

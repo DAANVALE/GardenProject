@@ -75,12 +75,9 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
     private DatePickerDialog.OnDateSetListener dateSetListener;
     private TimePickerDialog.OnTimeSetListener timeSetListener;
 
-    MaterialButton logoutButton;
-
     private Button mBtnCrearDatos;
     private DatabaseReference mDataBase;
 
-    Button btnUbicacionActual;
     private FusedLocationProviderClient ubicacion;
     FirebaseDatabase database;
     DatabaseReference refubicacion;
@@ -170,7 +167,6 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
         Button btn_tarjeta = view.findViewById(R.id.btntarj);
         Button btn_efectivo = view.findViewById(R.id.btnefec);
 
-        logoutButton = view.findViewById(R.id.logoutButton);
         mBtnCrearDatos = view.findViewById(R.id.btnCrearDatos);
         TVDate = view.findViewById(R.id.TVDate);
         TVHour = view.findViewById(R.id.TVHour);
@@ -202,14 +198,6 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
             @Override
             public void onClick(View v) {
                 LinearTarj.setVisibility(View.GONE);
-            }
-        });
-
-        logoutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                Navigation.findNavController(v).navigate(R.id.loginScreen);
             }
         });
 

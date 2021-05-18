@@ -15,10 +15,14 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.Navigation;
 
 import com.example.gardenproyect.R;
+import com.google.android.material.button.MaterialButton;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeFragment_Cliente extends Fragment {
 
     private HomeViewModel_Cliente homeViewModelCliente;
+
+    MaterialButton logoutButton;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -33,6 +37,7 @@ public class HomeFragment_Cliente extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         Button btnAgendar = view.findViewById(R.id.btnAgendar);
+        logoutButton = view.findViewById(R.id.logoutButton);
 
         btnAgendar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,5 +45,14 @@ public class HomeFragment_Cliente extends Fragment {
                 Navigation.findNavController(v).navigate(R.id.nav_service_cliente);
             }
         });
+
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Navigation.findNavController(v).navigate(R.id.loginScreen);
+            }
+        });
+
     }
 }
