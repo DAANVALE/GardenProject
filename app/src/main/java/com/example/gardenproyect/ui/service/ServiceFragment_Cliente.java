@@ -77,7 +77,6 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
 
     MaterialButton logoutButton;
 
-    private EditText mETMensaje;
     private Button mBtnCrearDatos;
     private DatabaseReference mDataBase;
 
@@ -89,7 +88,7 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
     String dia = "Date";
     String hora = "Time";
     EditText editText;
-    TextView textView1, textView2;
+    String Nombre_direccion, Coordenadas_ubicacion;
 
 
     boolean Busqueda_de_ubicacion = false;
@@ -172,12 +171,10 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
         Button btn_efectivo = view.findViewById(R.id.btnefec);
 
         logoutButton = view.findViewById(R.id.logoutButton);
-        mETMensaje = view.findViewById(R.id.ETMensaje);
         mBtnCrearDatos = view.findViewById(R.id.btnCrearDatos);
         TVDate = view.findViewById(R.id.TVDate);
         TVHour = view.findViewById(R.id.TVHour);
         mDataBase = FirebaseDatabase.getInstance().getReference();
-        btnUbicacionActual = view.findViewById(R.id.btnUbicacionActual);
 
         database = FirebaseDatabase.getInstance();
         refubicacion = database.getReference("ubicacion");
@@ -185,8 +182,6 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
         mMapView = (MapView) root.findViewById(R.id.map);
 
         editText = view.findViewById(R.id.edit_text);
-        textView1 = view.findViewById(R.id.text_view1);
-        textView2 = view.findViewById(R.id.text_view2);
         Places.initialize(getActivity(), "AIzaSyAdD7LnLkwWg--MB8qf0Ko7Cm_uIfv1vOc");
 
         btnTypeService.setOnClickListener(new View.OnClickListener() {
@@ -221,9 +216,6 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
         mBtnCrearDatos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String Nombre_direccion = textView1.getText().toString();
-                String Coordenadas_ubicacion = textView2.getText().toString();
-                String texto = mETMensaje.getText().toString();
                 String fechas = dia;
                 String horas = hora;
                 Map<String, Object> usuarioMap = new HashMap<>();
@@ -237,7 +229,6 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
                     usuarioMap.put("coordenada latitud", lat);
                     usuarioMap.put("coordenada longitud", lon);
                 }
-                usuarioMap.put("texto", texto);
                 usuarioMap.put("fecha", fechas);
                 usuarioMap.put("hora", horas);
                 mDataBase.child("Usuarios").push().setValue(usuarioMap);
@@ -289,8 +280,6 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
                     Double latitud = location.getLatitude();
                     Double longitud = location.getLongitude();
 
-                    UbicacionActl ubi = new UbicacionActl(latitud, longitud);
-                    //refubicacion.push().setValue(ubi);
                     lat = latitud.toString();
                     lon = longitud.toString();
 
@@ -338,8 +327,8 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
         if (requestCode == 100 && resultCode == RESULT_OK){
             Place place = Autocomplete.getPlaceFromIntent(data);
             editText.setText(place.getAddress());
-            textView1.setText(String.format("%s", place.getName()));
-            textView2.setText(String.valueOf(place.getLatLng()));
+            Nombre_direccion = place.getName();
+            Coordenadas_ubicacion = String.valueOf(place.getLatLng());
             mGoogleMap.clear();
             mGoogleMap.addMarker(new MarkerOptions().position(place.getLatLng()).title(place.getName()));
             CameraPosition Ubi_buscada = CameraPosition.builder().target(place.getLatLng()).zoom(16).bearing(0).tilt(45).build();
