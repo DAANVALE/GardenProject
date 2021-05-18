@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.service.ServiceFragment_Jardinero">
+    tools:context=".ui.service.ServiceFragment_Jardinero"
+    android:background="#B5DFDA"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        android:background="#B5DFDA"
         android:paddingHorizontal="30dp"
         >
 
@@ -51,37 +52,7 @@
             android:gravity="center"
             android:textSize="22dp"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="Podado de arbol"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_marginTop="20dp"
-            android:textColor="#000000"
-            android:textSize="20dp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="Podado"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_marginTop="10dp"
-            android:textColor="#000000"
-            android:textSize="20dp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="Plantar"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_marginTop="10dp"
-            android:textColor="#000000"
-            android:textSize="20dp"/>
-
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:text="comenzar"
@@ -90,7 +61,7 @@
             android:layout_marginTop="30dp"
             android:background="@color/colorPrimary"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:text="Acabar"

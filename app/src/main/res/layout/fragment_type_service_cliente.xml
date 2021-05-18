@@ -29,9 +29,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:textSize="35dp"
+                    android:textSize="20dp"
                     android:textColor="@color/colorPrimary"
-                    android:text="Aceptar"
+                    android:text="Tipo\nservicio"
                     android:textStyle="bold"/>
 
             </LinearLayout>
@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="right|center_vertical">
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnserv_apt"
                     android:layout_width="80dp"
                     android:layout_height="60dp"
@@ -48,7 +48,7 @@
                     android:text="Apt"
                     />
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/ButtonEnvSrv"
                     android:text="Enviar"
                     android:layout_marginRight="20dp"

@@ -33,23 +33,6 @@
     </fragment>
 
     <fragment
-        android:id="@+id/nav_calendar_jardinero"
-        android:name="com.example.gardenproyect.ui.calendar.CalendarFragment_Jardinero"
-        android:label="@string/menu_calendar_jardinero"
-        tools:layout="@layout/fragment_calendar_jardinero"
-        >
-        <action
-            android:id="@+id/action_nav_calendar_jardinero_to_nav_time_jardinero"
-            app:destination="@id/nav_time_jardinero" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/nav_time_jardinero"
-        android:name="com.example.gardenproyect.ui.time.TimeFragment_Jardinero"
-        android:label="@string/menu_time_jardinero"
-        tools:layout="@layout/fragment_time_jardinero"/>
-
-    <fragment
         android:id="@+id/nav_help"
         android:name="com.example.gardenproyect.ui.help.HelpFragment"
         android:label="@string/menu_help"
@@ -59,13 +42,16 @@
         android:id="@+id/nav_comment_Jardinero"
         android:name="com.example.gardenproyect.ui.comment.CommentFragment_Jardinero"
         android:label="@string/menu_comment"
-        tools:layout="@layout/fragment_comment_jardinero"/>
+        tools:layout="@layout/fragment_comment_jardinero">
+        <action
+            android:id="@+id/action_nav_comment_Jardinero_to_nav_home_jardinero"
+            app:destination="@id/nav_home_jardinero" />
+    </fragment>
 
     <activity
         android:id="@+id/loginScreenTwo"
         android:name="com.example.gardenproyect.LoginScreenTwo"
         android:label="activity_login_screen_two"
         tools:layout="@layout/activity_login_screen_two" />
-
 
 </navigation>

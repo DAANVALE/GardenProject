@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,12 +8,20 @@
     android:orientation="vertical"
     tools:context=".LoginScreenTwo">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_gravity="top">
+
     <ImageView
         android:id="@+id/loginImageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/flor"
-        android:layout_gravity="center"/>
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:src="@drawable/logo"
+        android:layout_gravity="center"
+        />
 
     <TextView
         android:id="@+id/bienvenidoLabel"
@@ -91,4 +99,5 @@
 
     </LinearLayout>
 
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

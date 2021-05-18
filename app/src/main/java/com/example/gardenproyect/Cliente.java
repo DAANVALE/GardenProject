@@ -32,7 +32,7 @@ public class Cliente extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home_cliente, R.id.nav_dinero_cliente, R.id.nav_help, R.id.nav_service_cliente, R.id.nav_calendar_cliente, R.id.nav_time_cliente, R.id.typeServiceFragment_Cliente)
+                R.id.nav_home_cliente, R.id.nav_dinero_cliente, R.id.nav_help, R.id.nav_service_cliente, R.id.typeServiceFragment_Cliente)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_cliente);
