@@ -5,15 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.service.ServiceFragment_Cliente"
-    android:orientation="vertical"
-    >
+    android:background="#B5DFDA"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        android:background="#B5DFDA"
         android:paddingHorizontal="30dp"
         >
 
@@ -47,7 +46,7 @@
             android:orientation="horizontal"
             android:gravity="center">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnDate"
                 android:layout_marginTop="15dp"
                 android:background="@color/colorPrimary"
@@ -75,11 +74,11 @@
             android:orientation="horizontal"
             android:gravity="center">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnHour"
                 android:layout_marginTop="15dp"
                 android:background="@color/colorPrimary"
-                android:layout_width="wrap_content"
+                android:layout_width="95dp"
                 android:layout_height="wrap_content"
                 android:text="Hora"
                 android:textSize="18dp"
@@ -97,35 +96,27 @@
 
         </LinearLayout>
 
-     <Button
+     <com.google.android.material.button.MaterialButton
          android:id="@+id/btnAgregarTipoServicio"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:layout_marginTop="20dp"
+         android:layout_marginBottom="15dp"
          android:text="Agregar +"
          android:textSize="20dp"
          android:textColor="#000000"
          android:background="@color/colorPrimary"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="Total $ ×××"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:textSize="20dp"
-            android:textColor="#000000"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:layout_marginBottom="20dp">
+            android:layout_marginBottom="15dp">
             <Button
                 android:background="@color/colorPrimaryDark"
                 android:id="@+id/btnefec"
-                android:layout_width="120dp"
+                android:layout_width="140dp"
                 android:layout_height="40dp"
                 android:text="Efectivo"
                 android:textSize="20dp"
@@ -137,7 +128,7 @@
                 android:background="@color/colorPrimaryDark"
                 android:id="@+id/btntarj"
                 android:layout_gravity="center"
-                android:layout_width="120dp"
+                android:layout_width="140dp"
                 android:layout_height="40dp"
                 android:text="Tarjeta"
                 android:textSize="20dp"
@@ -213,39 +204,13 @@
             </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"></LinearLayout>
-        <Button
-            android:background="@color/colorPrimary"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginHorizontal="30dp"
-            android:text="Pagar"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"/>
-
-        <EditText
-            android:id="@+id/ETMensaje"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:hint="Ingrese el texto"/>
-
         <Button
             android:id="@+id/btnCrearDatos"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Crear datos"/>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/logoutButton"
-            android:layout_width="111dp"
-            android:layout_height="wrap_content"
-            android:text="LOGOUT" />
+            android:layout_height="50dp"
+            android:text="Pedir sevicio"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
 
     </LinearLayout>
 </ScrollView>
