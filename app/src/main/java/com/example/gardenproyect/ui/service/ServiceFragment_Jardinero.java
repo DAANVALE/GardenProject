@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -36,6 +37,9 @@ public class ServiceFragment_Jardinero extends Fragment implements OnMapReadyCal
     GoogleMap mGoogleMap;
     MapView mMapView;
     View root;
+    Button btnComenzar;
+    Button btnTerminar;
+
     private static final int LOCATION_REQUEST = 500;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -43,14 +47,36 @@ public class ServiceFragment_Jardinero extends Fragment implements OnMapReadyCal
         ServiceViewModelJardinero =
                 ViewModelProviders.of(this).get(ServiceViewModel_Jardinero.class);
         root = inflater.inflate(R.layout.fragment_service_jardinero, container, false);
+
+
+
         return root;
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         mMapView = (MapView) root.findViewById(R.id.map);
+        btnComenzar = (Button) root.findViewById(R.id.comenzarjardinero);
+        btnTerminar = (Button) root.findViewById(R.id.terminarjardinero);
+
+        btnTerminar.setVisibility(View.INVISIBLE);
+
+        btnComenzar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btnComenzar.setVisibility(View.INVISIBLE);
+                btnTerminar.setVisibility(View.VISIBLE);
+            }
+        });
+
+        btnTerminar.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
         if (mMapView != null) {
             mMapView.onCreate(null);

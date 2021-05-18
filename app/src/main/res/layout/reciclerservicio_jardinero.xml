@@ -13,12 +13,13 @@
         android:orientation="vertical"
         android:layout_marginHorizontal="10dp"
         android:layout_marginVertical="5dp"
-        android:gravity="top">
+        android:gravity="top"
+        android:padding="5dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#00DAA4"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="#00DAA4">
         <TextView
             android:id="@+id/textViewServiceDay"
             android:layout_width="wrap_content"
@@ -39,8 +40,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#00DAA4"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingTop="2dp"
+        android:background="#00DAA4">
         <TextView
             android:id="@+id/textViewServicePlace"
             android:layout_width="match_parent"
@@ -50,5 +52,11 @@
             android:text="Mensaje">
         </TextView>
     </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#D2D2D2">
+        </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

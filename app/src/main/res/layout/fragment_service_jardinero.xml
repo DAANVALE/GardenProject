@@ -53,6 +53,7 @@
             android:textSize="22dp"/>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/comenzarjardinero"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:text="comenzar"
@@ -62,6 +63,7 @@
             android:background="@color/colorPrimary"/>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/terminarjardinero"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:text="Acabar"
