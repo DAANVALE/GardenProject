@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_nav_home_jardinero_to_nav_service_Jardinero"
             app:destination="@id/nav_service_Jardinero" />
+        <action
+            android:id="@+id/action_nav_home_jardinero_to_nav_dinero_jardinero"
+            app:destination="@id/nav_dinero_jardinero" />
     </fragment>
 
     <fragment

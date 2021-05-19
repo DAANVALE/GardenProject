@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.dinero.DineroFragment_Jardinero"
     android:orientation="vertical"
-    android:background="@color/colorPrimaryDark">
+    android:background="#B5DFDA">
 
     <LinearLayout
         android:layout_width="match_parent"

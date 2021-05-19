@@ -173,7 +173,7 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
         mDataBase = FirebaseDatabase.getInstance().getReference();
 
         database = FirebaseDatabase.getInstance();
-        refubicacion = database.getReference("ubicacion");
+        refubicacion = database.getReference("Ubicación");
 
         mMapView = (MapView) root.findViewById(R.id.map);
 
@@ -207,18 +207,15 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
                 String fechas = dia;
                 String horas = hora;
                 Map<String, Object> usuarioMap = new HashMap<>();
-                usuarioMap.put("nombre", "giovanni");
-                usuarioMap.put("apellido", "vega");
-                usuarioMap.put("edad", 19);
                 if (Busqueda_de_ubicacion == true) {
-                    usuarioMap.put("nombre de dirección", Nombre_direccion);
-                    usuarioMap.put("coordenadas de ubicacion", Coordenadas_ubicacion);
+                    usuarioMap.put("Nombre de dirección", Nombre_direccion);
+                    usuarioMap.put("Coordenadas de ubicación", Coordenadas_ubicacion);
                 }else{
-                    usuarioMap.put("coordenada latitud", lat);
-                    usuarioMap.put("coordenada longitud", lon);
+                    usuarioMap.put("Coordenada latitud",lat);
+                    usuarioMap.put("Coordenada longitud", lon);
                 }
-                usuarioMap.put("fecha", fechas);
-                usuarioMap.put("hora", horas);
+                usuarioMap.put("Fecha", fechas);
+                usuarioMap.put("Hora", horas);
                 mDataBase.child("Usuarios").push().setValue(usuarioMap);
             }
         });
@@ -271,7 +268,7 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
                     lat = latitud.toString();
                     lon = longitud.toString();
 
-                    Toast.makeText(getActivity(), "Ubicacion agregada", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Ubicación agregada", Toast.LENGTH_SHORT).show();
 
                     googleMap.addMarker(new MarkerOptions().position(new LatLng(latitud, longitud)).title("Ubicación actual"));
 

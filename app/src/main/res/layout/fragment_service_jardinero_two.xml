@@ -25,21 +25,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/map"/>
-
         </FrameLayout>
 
         <TextView
+            android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cliente: Daan Valencia"
-            android:textColor="#000000"
-            android:textSize="25dp"
-            android:layout_marginTop="10dp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Rio San Fernando #1465, Tonala, Jal"
+            android:text="Alcazár de San Juan 1337"
             android:textColor="#000000"
             android:gravity="center"
             android:textSize="20dp"/>
@@ -47,10 +39,19 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:text="Horario: 4:30 - 5:20"
+            android:text="Día: 22/05/2021"
             android:textColor="#000000"
             android:gravity="center"
             android:textSize="22dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="Horario: 16:20"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:textSize="22dp"
+            android:layout_marginBottom="20dp"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/comenzarjardinero"
@@ -59,8 +60,8 @@
             android:text="comenzar"
             android:textSize="18dp"
             android:textStyle="bold"
-            android:layout_marginTop="30dp"
-            android:background="@color/colorPrimary"/>
+            android:layout_marginTop="10dp"
+            android:background="@drawable/boton1"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/terminarjardinero"
@@ -70,7 +71,7 @@
             android:textSize="18dp"
             android:textStyle="bold"
             android:layout_marginTop="10dp"
-            android:background="@color/colorPrimary"/>
+            android:background="@drawable/boton1"/>
 
     </LinearLayout>
 

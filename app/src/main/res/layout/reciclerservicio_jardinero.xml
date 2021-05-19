@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="#00DAA4">
+        android:background="@color/colorPrimaryDark">
         <TextView
             android:id="@+id/textViewServiceDay"
             android:layout_width="wrap_content"
@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingTop="2dp"
-        android:background="#00DAA4">
+        android:background="@color/colorPrimaryDark">
         <TextView
             android:id="@+id/textViewServicePlace"
             android:layout_width="match_parent"
@@ -56,7 +56,7 @@
             android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:background="#D2D2D2">
+            android:background="#000">
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

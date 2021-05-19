@@ -23,6 +23,7 @@ public class HomeFragment_Jardinero extends Fragment{
     private HomeViewModel_Jardinero homeViewModelJardinero;
 
     MaterialButton logoutButton;
+    Button PendienteButton;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -38,12 +39,20 @@ public class HomeFragment_Jardinero extends Fragment{
         super.onViewCreated(view, savedInstanceState);
 
         Button btnAgendar = view.findViewById(R.id.btnAgendar);
+        PendienteButton = view.findViewById(R.id.btnPendientes);
         logoutButton = view.findViewById(R.id.logoutButton);
 
         btnAgendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(v).navigate(R.id.nav_service_Jardinero);
+            }
+        });
+
+        PendienteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.nav_dinero_jardinero);
             }
         });
 
@@ -54,7 +63,5 @@ public class HomeFragment_Jardinero extends Fragment{
                 Navigation.findNavController(v).navigate(R.id.loginScreenTwo);
             }
         });
-
     }
 }
-

@@ -106,9 +106,9 @@ public class ServiceFragment_JardineroTwo extends Fragment implements OnMapReady
     }
 
     private void marcadores(GoogleMap googleMap) {
-        googleMap.addMarker(new MarkerOptions().position(new LatLng(20.6705541,-103.2175046)).title("Ubicación del servicio"));
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(20.6703495,-103.2053756)).title("Ubicación del servicio"));
 
-        CameraPosition Ubicacion = CameraPosition.builder().target(new LatLng(20.6705541,-103.2175046)).zoom(16).bearing(0).tilt(45).build();
+        CameraPosition Ubicacion = CameraPosition.builder().target(new LatLng(20.6703495,-103.2053756)).zoom(16).bearing(0).tilt(45).build();
 
         googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(Ubicacion));
     }
