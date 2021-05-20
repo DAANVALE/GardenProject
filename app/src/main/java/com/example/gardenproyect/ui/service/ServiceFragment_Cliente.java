@@ -268,8 +268,6 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
                     lat = latitud.toString();
                     lon = longitud.toString();
 
-                    Toast.makeText(getActivity(), "Ubicación agregada", Toast.LENGTH_SHORT).show();
-
                     googleMap.addMarker(new MarkerOptions().position(new LatLng(latitud, longitud)).title("Ubicación actual"));
 
                     CameraPosition Ubicación_actual = CameraPosition.builder().target(new LatLng(latitud, longitud)).zoom(16).bearing(0).tilt(45).build();
