@@ -65,9 +65,9 @@ public class DineroFragment_Jardinero extends Fragment {
                         String fecha = "";
                         String lugar = "";
                         String dia = "";
-                        try{fecha = ds.child("hora").getValue().toString();}catch (Exception f){fecha = "sindato";}
-                        try{dia = ds.child("fecha").getValue().toString();}catch (Exception f){fecha = "sindato";}
-                        try { lugar = ds.child("nombre de dirección").getValue().toString(); } catch (Exception l) { lugar = "sindato"; }
+                        try{fecha = ds.child("Hora").getValue().toString();}catch (Exception f){fecha = "sindato";}
+                        try{dia = ds.child("Fecha").getValue().toString();}catch (Exception f){fecha = "sindato";}
+                        try{lugar = ds.child("Nombre de dirección").getValue().toString(); } catch (Exception l) { lugar = "sindato"; }
                         mList.add(new ServicioRecicler_Jardinero(fecha,dia,lugar));
                     }
                     mAdapter = new ServicioAdapter_Jardinero(mList,R.layout.reciclerservicio_jardinero);

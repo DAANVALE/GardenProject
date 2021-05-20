@@ -16,8 +16,6 @@ public class ServicioAdapter_Jardinero extends RecyclerView.Adapter<ServicioAdap
 
     private int resourse;
     private ArrayList<ServicioRecicler_Jardinero> recicler_jardineros;
-    /*private ArrayList<ServicioRecicler_Jardinero> recicler_jardinerosDay;
-    private ArrayList<ServicioRecicler_Jardinero> recicler_jardinerosPlace;*/
 
     public ServicioAdapter_Jardinero(ArrayList<ServicioRecicler_Jardinero> recicler_jardineros,
                                      int resourse){
