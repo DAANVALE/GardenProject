@@ -217,6 +217,8 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
                 usuarioMap.put("Fecha", fechas);
                 usuarioMap.put("Hora", horas);
                 mDataBase.child("Usuarios").push().setValue(usuarioMap);
+
+                Toast.makeText(getActivity(), "Servicio añadido",Toast.LENGTH_LONG).show();
             }
         });
 

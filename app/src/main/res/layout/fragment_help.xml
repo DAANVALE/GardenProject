@@ -16,54 +16,6 @@
     android:gravity="center"
     android:background="#B5DFDA"
     >
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Equipo 41"
-        android:textColor="#000000"
-        android:textSize="30dp"/>
-
-    <TextView
-        android:layout_marginTop="25dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Integrantes:"
-        android:textColor="#000000"
-        android:textSize="18dp"/>
-
-    <TextView
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:gravity="center"
-        android:textSize="20dp"
-        android:text="Macias Saavedra Gerardo Adrian\nVega Torres Edwin Giovanni\nValencia Alvarez Daan Yael"/>
-
-    <TextView
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Asesores:"
-        android:textColor="#000000"
-        android:textSize="18dp"/>
-
-    <TextView
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:gravity="center"
-        android:textSize="20dp"
-        android:text="Coronado Rodríguez Rosa Aracelí\nMartínez Rangel Pedro Ulises"/>
-
-    <TextView
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="De:"
-        android:textColor="#000000"
-        android:textSize="18dp"/>
 
     <TextView
         android:layout_marginTop="10dp"
@@ -72,6 +24,54 @@
         android:textColor="#000000"
         android:gravity="center"
         android:textSize="18dp"
-        android:text="Centro de Enseñanza Técnico Industrial\nPlantel:\n Rio Santiago"/>
+        android:text="Contacto"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:text="Macias Saavedra Gerardo Adrian\na17300384@ceti.mx"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:text="Edwin Giovanni Vega Torres\na17300437@ceti.mx"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:text="Daan Yael Valencia Alvarez\na17300435@ceti.mx"/>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:text="Dirección"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/boton1"
+        android:layout_marginHorizontal="50dp"
+        android:text="Av Adolfo López Mateos Nte 95, Italia Providencia, 44648 Guadalajara, Jal."
+        android:id="@+id/place"
+        />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
