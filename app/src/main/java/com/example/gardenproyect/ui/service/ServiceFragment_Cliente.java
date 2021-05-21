@@ -198,6 +198,7 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
             @Override
             public void onClick(View v) {
                 LinearTarj.setVisibility(View.GONE);
+                Toast.makeText(getActivity(), "Pago por efectivo",Toast.LENGTH_LONG).show();
             }
         });
 
