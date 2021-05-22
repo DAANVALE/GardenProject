@@ -56,6 +56,8 @@ public class TypeServiceFragment_Cliente extends Fragment{
             vt_rtcesped, vt_rtarbpal, vt_rtarbusto,
                 v_rtcesped, v_rtarbpal, v_rtarbusto;
 
+    TextView textototal;
+
     /*1*/ int C_pod_csp = 0;
     /*2*/ int C_crt_palmera = 0, C_crt_arbol = 0, C_crt_arbusto = 0;
     /*3*/ int C_pln_cesped = 0, C_pln_arbpal = 0, C_pln_arbusto = 0;
@@ -76,6 +78,7 @@ public class TypeServiceFragment_Cliente extends Fragment{
     int VTrtarbusto = 0;
 
     int servicios_totales_sum = 0;
+    int costo_total;
 
     Button serv_apt;
     Button serv_enviar;
@@ -143,11 +146,15 @@ public class TypeServiceFragment_Cliente extends Fragment{
         final int Vrtarbpal = 800; v_rtarbpal = view.findViewById(R.id.V_rt_arbpal); v_rtarbpal.setText("$"+Vrtarbpal);
         final int Vrtarbusto = 100; v_rtarbusto = view.findViewById(R.id.V_rt_arbusto); v_rtarbusto.setText("$"+Vrtarbusto);
 
+        textototal = view.findViewById(R.id.TextoTotal);
+
         serv_apt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 serv_enviar.setVisibility(View.VISIBLE);
+
+                costo_total = 0;
 
                 //1
                 try { C_pod_csp = Integer.parseInt(String.valueOf(pod_cesped.getEditText().getText())); } catch(Exception e) { C_pod_csp = 0; }
@@ -167,19 +174,19 @@ public class TypeServiceFragment_Cliente extends Fragment{
                 try { C_rt_arbpal = Integer.parseInt(String.valueOf(rt_arbpal.getEditText().getText())); } catch (Exception e) {C_rt_arbpal = 0;}
                 try { C_rt_arbusto = Integer.parseInt(String.valueOf(rt_arbusto.getEditText().getText())); } catch (Exception e) {C_rt_arbusto = 0;}
 
-                VTcrtcesped = Vpdcesped * C_pod_csp;
+                VTcrtcesped = Vpdcesped * C_pod_csp; costo_total = costo_total + VTcrtcesped;
 
-                /*2*/ VTcrtpalmera = Vcrtpalmera * C_crt_palmera;
-                VTcrtarbol = Vcrtarbol * C_crt_arbol;
-                VTcrtarbusto = Vcrtarbusto * C_crt_arbusto;
+                /*2*/ VTcrtpalmera = Vcrtpalmera * C_crt_palmera; costo_total = costo_total + VTcrtpalmera;
+                VTcrtarbol = Vcrtarbol * C_crt_arbol; costo_total = costo_total + VTcrtarbol;
+                VTcrtarbusto = Vcrtarbusto * C_crt_arbusto; costo_total = costo_total + VTcrtarbusto;
 
-                /*3*/ VTplncesped = Vplncesped * C_pln_cesped;
-                VTplnarbpal = Vplnarbpal * C_pln_arbpal;
-                VTplnarbusto = Vplnarbusto * C_pln_arbusto;
+                /*3*/ VTplncesped = Vplncesped * C_pln_cesped; costo_total = costo_total + VTplncesped;
+                VTplnarbpal = Vplnarbpal * C_pln_arbpal; costo_total = costo_total + VTplnarbpal;
+                VTplnarbusto = Vplnarbusto * C_pln_arbusto; costo_total = costo_total + VTplnarbusto;
 
-                /*4*/ VTrtcesped = Vrtcesped * C_rt_cesped;
-                VTrtarbpal = Vrtarbpal * C_rt_arbpal;
-                VTrtarbusto = Vrtarbusto * C_rt_arbusto;
+                /*4*/ VTrtcesped = Vrtcesped * C_rt_cesped; costo_total = costo_total + VTrtcesped;
+                VTrtarbpal = Vrtarbpal * C_rt_arbpal; costo_total = costo_total + VTrtarbpal;
+                VTrtarbusto = Vrtarbusto * C_rt_arbusto; costo_total = costo_total + VTrtarbusto;
 
                 /*1*/ vt_pdcesped.setText("$"+VTcrtcesped);
 
@@ -194,6 +201,8 @@ public class TypeServiceFragment_Cliente extends Fragment{
                 /*4*/ vt_rtcesped.setText("$"+VTrtcesped);
                 vt_rtarbpal.setText("$"+VTrtarbpal);
                 vt_rtarbusto.setText("$"+VTrtarbusto);
+
+                textototal.setText("$"+costo_total);
             }
         });
 
@@ -278,7 +287,7 @@ public class TypeServiceFragment_Cliente extends Fragment{
                         S_rt_arbusto.put("Costo unitario",Vrtarbusto);
                         Service.put("Retirar arbusto", S_rt_arbusto);
                     } //10
-
+                    Service.put("Total",costo_total);
                     mDataBase.child("Servicio").push().setValue(Service);
                 }
                 Navigation.findNavController(v).navigate(R.id.nav_service_cliente);
