@@ -52,7 +52,43 @@
             android:textColor="#000000"
             android:gravity="center"
             android:textSize="22dp"
-            android:layout_marginBottom="20dp" />
+            android:layout_marginBottom="15dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Podado de césped 30m²"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Corte de palmera 2"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Plantar Césped 4m²"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Retirar arbusto 3"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:layout_marginBottom="15dp"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/comenzarjardinero"
