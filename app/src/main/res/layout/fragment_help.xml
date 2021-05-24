@@ -34,7 +34,7 @@
         android:textColor="#000000"
         android:gravity="center"
         android:textSize="20dp"
-        android:text="Gerardo Adrian Macias Saavedra\na17300384@ceti.mx"/>
+        android:text="Gerardo Adrian Macias Saavedra\n33 2389 8981\na17300384@ceti.mx"/>
 
     <TextView
         android:layout_marginTop="10dp"
@@ -43,7 +43,7 @@
         android:textColor="#000000"
         android:gravity="center"
         android:textSize="20dp"
-        android:text="Edwin Giovanni Vega Torres\na17300437@ceti.mx"/>
+        android:text="Edwin Giovanni Vega Torres\n33 5305 3893\na17300437@ceti.mx"/>
 
     <TextView
         android:layout_marginTop="10dp"
@@ -52,7 +52,7 @@
         android:textColor="#000000"
         android:gravity="center"
         android:textSize="20dp"
-        android:text="Daan Yael Valencia Alvarez\na17300435@ceti.mx"/>
+        android:text="Daan Yael Valencia Alvarez\n33 2395 9052\na17300435@ceti.mx"/>
 
     <TextView
         android:layout_marginTop="20dp"
