@@ -243,7 +243,6 @@ public class ServiceFragment_Cliente extends Fragment implements OnMapReadyCallb
                         , fieldList).build(getActivity());
 
                 startActivityForResult(intent, 100);
-
             }
         });
 
